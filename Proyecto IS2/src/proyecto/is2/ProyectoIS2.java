@@ -21,6 +21,7 @@ public class ProyectoIS2 {
        
         Proyectois2View view = new Proyectois2View();
         Proyectois2Model model = new Proyectois2Model();
+        view.setVisible(true);
         //Proyectois2Controller controller = new Proyectois2Controller(view,model);
     }
 }
