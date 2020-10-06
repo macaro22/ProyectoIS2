@@ -6,8 +6,8 @@
 package proyecto.is2;
 
 /**
- *
- * @author alumno
+ * @author Carlos
+ * @author Maria
  */
 public class ProyectoIS2 {
 
