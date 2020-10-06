@@ -5,10 +5,25 @@
  */
 package proyecto.is2.view;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 /**
  *
  * @author carlosguardiola
  */
-public class menuJugador {
+public class menuJugador extends JFrame{
     
+    private JButton reserva, partida, menor;
+    
+    public menuJugador(){
+        
+        reserva = new JButton("Reservar Sede");
+        partida = new JButton("Datos de Partidas");
+        menor = new JButton("Responsable Menor");
+        
+        this.add(reserva);
+        this.add(partida);
+        this.add(menor);
+    }
 }
