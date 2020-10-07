@@ -5,6 +5,8 @@
  */
 package proyecto.is2.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author carlosguardiola
@@ -14,7 +16,8 @@ public class VentanaResponsable extends javax.swing.JFrame {
     /**
      * Creates new form VentanaResponsable
      */
-    public VentanaResponsable() {
+    public VentanaResponsable(JFrame VentanaAnterior) {
+        this.ventanaAnterior=VentanaAnterior;
         initComponents();
     }
 
@@ -31,11 +34,9 @@ public class VentanaResponsable extends javax.swing.JFrame {
         labelDomicilio = new javax.swing.JLabel();
         textNombre = new javax.swing.JTextField();
         textTelefono = new javax.swing.JTextField();
-        botonVolver = new javax.swing.JButton();
         botonAceptar = new javax.swing.JButton();
         textDomicilio = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Responsable del menor");
 
         labelDescripcion.setText("Datos del responsable del menor");
@@ -45,13 +46,6 @@ public class VentanaResponsable extends javax.swing.JFrame {
         labelTelefono.setText("Telefono");
 
         labelDomicilio.setText("Domicilio");
-
-        botonVolver.setText("Volver");
-        botonVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverActionPerformed(evt);
-            }
-        });
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +77,7 @@ public class VentanaResponsable extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelDescripcion)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonVolver)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                                .addGap(0, 271, Short.MAX_VALUE)
                                 .addComponent(botonAceptar)))))
                 .addGap(22, 22, 22))
         );
@@ -106,31 +99,21 @@ public class VentanaResponsable extends javax.swing.JFrame {
                     .addComponent(labelDomicilio)
                     .addComponent(textDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonVolver)
-                    .addComponent(botonAceptar))
+                .addComponent(botonAceptar)
                 .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        VentanaPrincipalJugador principal= new VentanaPrincipalJugador();
-        this.setVisible(false);
-        principal.setVisible(true);
-    }//GEN-LAST:event_botonVolverActionPerformed
-
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
-        VentanaPrincipalJugador principal= new VentanaPrincipalJugador();
         this.setVisible(false);
-        principal.setVisible(true);
+        ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
-    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel labelDescripcion;
     private javax.swing.JLabel labelDomicilio;
     private javax.swing.JLabel labelNombre;
@@ -139,4 +122,5 @@ public class VentanaResponsable extends javax.swing.JFrame {
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField textTelefono;
     // End of variables declaration//GEN-END:variables
+    private JFrame ventanaAnterior;
 }

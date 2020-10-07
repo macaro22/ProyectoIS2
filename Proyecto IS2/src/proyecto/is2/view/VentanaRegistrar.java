@@ -5,6 +5,8 @@
  */
 package proyecto.is2.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author carlosguardiola
@@ -14,7 +16,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     /**
      * Creates new form VentanaRegistrar
      */
-    public VentanaRegistrar() {
+    public VentanaRegistrar(JFrame VentanaAnterior) {
+        this.ventanaAnterior=VentanaAnterior;
         initComponents();
     }
 
@@ -140,9 +143,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-        Proyectois2View vista = new Proyectois2View();
         this.setVisible(false);
-        vista.setVisible(true);
+        ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
@@ -168,4 +170,5 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField textUsuario;
     // End of variables declaration//GEN-END:variables
+    private JFrame ventanaAnterior;
 }

@@ -103,7 +103,7 @@ public class Proyectois2View extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEntrarActionPerformed
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-        VentanaRegistrar registrar = new VentanaRegistrar();
+        VentanaRegistrar registrar = new VentanaRegistrar(this);
         this.setVisible(false);
         registrar.setVisible(true);
     }//GEN-LAST:event_botonRegistrarActionPerformed

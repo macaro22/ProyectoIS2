@@ -38,6 +38,11 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
 
         botonReservar.setText("Rservar Sede");
         botonReservar.setPreferredSize(new java.awt.Dimension(122, 32));
+        botonReservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonReservarActionPerformed(evt);
+            }
+        });
 
         botonPartidos.setText("Datos Partidos");
         botonPartidos.addActionListener(new java.awt.event.ActionListener() {
@@ -120,16 +125,19 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResponsableActionPerformed
-        VentanaResponsable responsable = new VentanaResponsable();
-        this.setVisible(false);
+        VentanaResponsable responsable = new VentanaResponsable(this);
         responsable.setVisible(true);
     }//GEN-LAST:event_botonResponsableActionPerformed
 
     private void botonPartidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPartidosActionPerformed
-        VentanaPartido partido = new VentanaPartido();
-        this.setVisible(false);
+        VentanaPartido partido = new VentanaPartido(this);
         partido.setVisible(true);
     }//GEN-LAST:event_botonPartidosActionPerformed
+
+    private void botonReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReservarActionPerformed
+        VentanaReserva reserva = new VentanaReserva(this);
+        reserva.setVisible(true);
+    }//GEN-LAST:event_botonReservarActionPerformed
 
 
 
