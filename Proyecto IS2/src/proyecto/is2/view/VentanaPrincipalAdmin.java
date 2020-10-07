@@ -68,6 +68,11 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
         });
 
         botonAdministrar.setText("Administrar Clubs");
+        botonAdministrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAdministrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +132,11 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
         VentanaReserva reserva = new VentanaReserva(this);
         reserva.setVisible(true);
     }//GEN-LAST:event_botonReservarActionPerformed
+
+    private void botonAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarActionPerformed
+        VentanaClub club = new VentanaClub(this);
+        club.setVisible(true);
+    }//GEN-LAST:event_botonAdministrarActionPerformed
 
 
 

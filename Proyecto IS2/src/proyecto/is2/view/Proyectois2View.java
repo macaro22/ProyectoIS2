@@ -5,6 +5,8 @@
  */
 package proyecto.is2.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author carlosguardiola
@@ -16,6 +18,7 @@ public class Proyectois2View extends javax.swing.JFrame {
      */
     public Proyectois2View() {
         initComponents();
+        VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this);
     }
 
     /**
