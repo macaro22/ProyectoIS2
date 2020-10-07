@@ -97,9 +97,19 @@ public class Proyectois2View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
-        VentanaPrincipalJugador principal = new VentanaPrincipalJugador();
-        this.setVisible(false);
-        principal.setVisible(true);
+        
+        String usuario = textUsuario.getText();
+        
+        if("admin".equals(usuario)){
+            VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this);
+            this.setVisible(false);
+            admin.setVisible(true);
+        }
+        else{
+            VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this);
+            this.setVisible(false);
+            principal.setVisible(true);   
+        }
     }//GEN-LAST:event_botonEntrarActionPerformed
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed

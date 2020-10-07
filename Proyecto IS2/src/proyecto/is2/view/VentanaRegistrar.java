@@ -148,7 +148,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-        VentanaPrincipalJugador principal = new VentanaPrincipalJugador();
+        VentanaPrincipalJugador principal = new VentanaPrincipalJugador(ventanaAnterior);
         this.setVisible(false);
         principal.setVisible(true);
     }//GEN-LAST:event_botonRegistrarActionPerformed
