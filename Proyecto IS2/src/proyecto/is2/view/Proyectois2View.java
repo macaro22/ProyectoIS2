@@ -111,7 +111,8 @@ public class Proyectois2View extends javax.swing.JFrame {
         else{
             VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this);
             this.setVisible(false);
-            principal.setVisible(true);   
+            principal.setVisible(true);  
+            
         }
     }//GEN-LAST:event_botonEntrarActionPerformed
 
