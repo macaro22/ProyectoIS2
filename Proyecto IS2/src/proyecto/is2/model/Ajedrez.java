@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto.is2.controller;
+package proyecto.is2.model;
 
 /**
  *
  * @author carlosguardiola
  */
-public class Proyectois2Controller {
+public class Ajedrez {
     
 }
