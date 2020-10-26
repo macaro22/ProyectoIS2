@@ -5,6 +5,7 @@
  */
 package proyecto.is2.view;
 
+import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
 import proyecto.is2.controller.Jugador;
 
@@ -14,7 +15,7 @@ import proyecto.is2.controller.Jugador;
  */
 public class VentanaRegistrar extends javax.swing.JFrame {
 
-    Jugador jugador;
+    private Jugador jugador=new Jugador();
     
     public VentanaRegistrar(JFrame VentanaAnterior) {
         this.ventanaAnterior = VentanaAnterior;
@@ -112,9 +113,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                             .addComponent(textContrasenya)
                             .addComponent(textEdad)
                             .addComponent(textApellidos)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(comboProvincias, javax.swing.GroupLayout.Alignment.LEADING, 0, 70, Short.MAX_VALUE)
-                                .addComponent(comboClub, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(comboProvincias, 0, 70, Short.MAX_VALUE)
+                            .addComponent(comboClub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,9 +125,9 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                     .addComponent(labelNombre)
                     .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelApellidos)
-                    .addComponent(textApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelApellidos))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsuario)
@@ -168,6 +168,12 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         VentanaPrincipalJugador principal = new VentanaPrincipalJugador(ventanaAnterior);
         this.setVisible(false);
         principal.setVisible(true);
+        
+        String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
+        String club = comboClub.getItemAt(comboClub.getSelectedIndex());
+        
+        jugador.Jugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
+                textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club);
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     

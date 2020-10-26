@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package proyecto.is2.model;
+import java.util.ArrayList;
+import proyecto.is2.controller.Jugador;
 
 /**
  *
@@ -11,4 +13,10 @@ package proyecto.is2.model;
  */
 public class Ajedrez {
     
+     protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
+     private Jugador jugador;
+     
+     public void addUsuarioRegistrado(Jugador jugador){
+         jugadoresRegistrados.add(jugador);
+     }
 }
