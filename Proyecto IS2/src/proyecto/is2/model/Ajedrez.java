@@ -29,4 +29,15 @@ public class Ajedrez {
          gerentes.add(gerente);
          System.out.println("Gerente: "+gerentes.get(0).nombre());
      }
+     
+     public Gerente buscarGerente(String dni){
+         Gerente gerent = null;
+         
+         for(int i=0; i <gerentes.size(); i++){
+             if(gerentes.get(i).getDNI().equals(dni)){
+                 gerent = gerentes.get(i);
+             }
+         }
+         return gerent;
+     }
 }

@@ -162,7 +162,9 @@ public class VentanaClub extends javax.swing.JFrame {
 
     private void botonModificarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarGerenteActionPerformed
         // TODO add your handling code here:
-        
+        VentanaModificarClub modificarClub = new VentanaModificarClub(1,this);
+        this.setVisible(false);
+        modificarClub.setVisible(true);
     }//GEN-LAST:event_botonModificarGerenteActionPerformed
 
     private void comboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciaActionPerformed

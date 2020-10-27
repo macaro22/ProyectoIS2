@@ -23,12 +23,23 @@ public class Gerente {
     public Gerente(String nombre, String apellido, String dni, int edad, int nomina, int irpf){
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dni = dni;
         this.edad = edad;
         this.irpf = irpf;
         ajedrez.addGerente(this);
     }
            
-     public String nombre(){
+    public String nombre(){
         return nombre;
     }
+    
+    public String getDNI(){
+        return dni;
+    }
+    
+     public Gerente buscarGerente(String dni){
+         Gerente gerente = null;
+         gerente = ajedrez.buscarGerente(dni);
+         return gerente;
+     }
 }
