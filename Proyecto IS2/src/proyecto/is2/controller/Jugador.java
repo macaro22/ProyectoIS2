@@ -20,7 +20,7 @@ public class Jugador {
     private String club;
     protected Ajedrez ajedrez = new Ajedrez();
     
-    public void Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia, String club){
+    public Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia, String club){
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;

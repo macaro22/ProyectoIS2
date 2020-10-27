@@ -76,12 +76,6 @@ public class VentanaClub extends javax.swing.JFrame {
             }
         });
 
-        textSede.setText("Ribarroja de Turia");
-
-        textGerente.setText("Carlos Guardiola Boix");
-
-        textEntrenador.setText("Carlos Guardiola Boix");
-
         botonModificarGerente.setText("Modificar");
         botonModificarGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

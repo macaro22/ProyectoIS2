@@ -11,9 +11,10 @@ import proyecto.is2.controller.Gerente;
  * @author carlosguardiola
  */
 public class Club {
-    String nombre;
-    String sede;
-    Gerente gerente;
+    private String nombre;
+    private String sede;
+    private Gerente gerente;
+    
     
    public Club(String nombre, String sede){
        this.nombre = nombre;

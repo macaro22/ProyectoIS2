@@ -15,7 +15,7 @@ import proyecto.is2.controller.Jugador;
  */
 public class VentanaRegistrar extends javax.swing.JFrame {
 
-    private Jugador jugador=new Jugador();
+    private Jugador jugador;
     
     public VentanaRegistrar(JFrame VentanaAnterior) {
         this.ventanaAnterior = VentanaAnterior;
@@ -172,7 +172,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
         String club = comboClub.getItemAt(comboClub.getSelectedIndex());
         
-        jugador.Jugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
+        Jugador jugador = new Jugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
                 textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club);
     }//GEN-LAST:event_botonRegistrarActionPerformed
 

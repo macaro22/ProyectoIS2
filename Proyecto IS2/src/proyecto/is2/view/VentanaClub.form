@@ -157,19 +157,10 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="textSede">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ribarroja de Turia"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textGerente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Carlos Guardiola Boix"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textEntrenador">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Carlos Guardiola Boix"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botonModificarGerente">
       <Properties>
