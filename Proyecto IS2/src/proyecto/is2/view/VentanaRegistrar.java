@@ -84,6 +84,12 @@ public class VentanaRegistrar extends javax.swing.JFrame {
 
         labelClub.setText("Club");
 
+        comboClub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboClubActionPerformed(evt);
+            }
+        });
+
         labelApellidos.setText("Apellidos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,6 +207,10 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_comboProvinciasActionPerformed
+
+    private void comboClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboClubActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboClubActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
