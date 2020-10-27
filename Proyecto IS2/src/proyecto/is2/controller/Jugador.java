@@ -31,8 +31,7 @@ public class Jugador {
         ajedrez.addUsuarioRegistrado(this);
     }
     
-    public String getNombre(){
-        return this.nombre;
+    public String nombre(){
+        return nombre;
     }
-            
 }

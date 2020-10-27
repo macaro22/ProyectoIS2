@@ -16,7 +16,9 @@ public class Ajedrez {
      protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
      private Jugador jugador;
      
+     
      public void addUsuarioRegistrado(Jugador jugador){
          jugadoresRegistrados.add(jugador);
+         System.out.println(jugadoresRegistrados.get(0).nombre());
      }
 }

@@ -134,8 +134,8 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_botonReservarActionPerformed
 
     private void botonAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarActionPerformed
-        VentanaClub club = new VentanaClub(this);
-        club.setVisible(true);
+        VentanaClub clubs = new VentanaClub(this);
+        clubs.setVisible(true);
     }//GEN-LAST:event_botonAdministrarActionPerformed
 
 
