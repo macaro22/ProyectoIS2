@@ -6,18 +6,23 @@
 package proyecto.is2.view;
 
 import javax.swing.JFrame;
+import proyecto.is2.controller.Admin;
 
 /**
  *
  * @author carlosguardiola
  */
 public class VentanaClub extends javax.swing.JFrame {
-
+    
+    private final Admin admin;
+    String gerente;
     /**
      * Creates new form VentanaClub
      */
-    public VentanaClub(JFrame VentanaAnterior) {
+    public VentanaClub(JFrame VentanaAnterior, Admin admin, String gerente) {
         this.ventanaAnterior=VentanaAnterior;
+        this.admin = admin;
+        this.gerente = gerente;
         initComponents();
         
         textSede.setEditable(false);
@@ -27,6 +32,8 @@ public class VentanaClub extends javax.swing.JFrame {
         comboProvincia.addItem("Alicante");
         comboProvincia.addItem("Castellón");
         comboProvincia.addItem("Valencia");
+        
+        textGerente.setText(gerente);
     }
 
     /**
@@ -162,7 +169,7 @@ public class VentanaClub extends javax.swing.JFrame {
 
     private void botonModificarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarGerenteActionPerformed
         // TODO add your handling code here:
-        VentanaModificarClub modificarClub = new VentanaModificarClub(1,this);
+        VentanaModificarClub modificarClub = new VentanaModificarClub(1,this,admin);
         this.setVisible(false);
         modificarClub.setVisible(true);
     }//GEN-LAST:event_botonModificarGerenteActionPerformed

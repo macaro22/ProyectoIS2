@@ -5,9 +5,10 @@
  */
 package proyecto.is2.view;
 
+import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
 import proyecto.is2.controller.Gerente;
-
+import proyecto.is2.controller.Admin;
 /**
  *
  * @author carlosguardiola
@@ -15,13 +16,15 @@ import proyecto.is2.controller.Gerente;
 public class VentanaModificarClub extends javax.swing.JFrame {
 
     private Gerente gerente;
+    private final Admin admin;
+    String noombre;
     /**
      * Creates new form VentanaModificarClub
      */
-    public VentanaModificarClub(int buscar, JFrame VentanaAnterior) {
+    public VentanaModificarClub(int buscar, JFrame VentanaAnterior, Admin admin) {
         this.ventanaAnterior=VentanaAnterior;
+        this.admin = admin;
         initComponents();
-        
     }
 
     /**
@@ -38,8 +41,6 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         comboEncontrado = new javax.swing.JComboBox<>();
 
         setTitle("Modificar Club");
-
-        textBuscar.setText("a");
 
         botonBuscar.setText("Buscar");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -102,16 +103,17 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         ventanaAnterior.setVisible(true);
+        VentanaClub clubs = new VentanaClub(this,admin,noombre);
+        clubs.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-        String dni = textBuscar.getText();
-        Gerente gerente = new Gerente("a","a","a",1,1,1);
-        comboEncontrado.addItem(gerente.nombre()+" DNI: "+gerente.getDNI());
+        int dni = parseInt(textBuscar.getText());
+        noombre = admin.EncontrarGerente(dni);
+        comboEncontrado.addItem(noombre);
     }//GEN-LAST:event_botonBuscarActionPerformed
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.JButton botonBuscar;

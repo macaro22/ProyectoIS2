@@ -6,6 +6,7 @@
 package proyecto.is2.view;
 
 import javax.swing.JFrame;
+import proyecto.is2.controller.Admin;
 
 /**
  *
@@ -13,12 +14,12 @@ import javax.swing.JFrame;
  */
 public class Proyectois2View extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Proyectois2View
-     */
+    private Admin admins = new Admin("admin","admin");
+    
     public Proyectois2View() {
         initComponents();
-        VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this);
+        
+        
     }
 
     /**
@@ -104,7 +105,7 @@ public class Proyectois2View extends javax.swing.JFrame {
         String usuario = textUsuario.getText();
         
         if("admin".equals(usuario)){
-            VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this);
+            VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this,admins);
             this.setVisible(false);
             admin.setVisible(true);
         }

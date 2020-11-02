@@ -6,16 +6,19 @@
 package proyecto.is2.view;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import proyecto.is2.controller.Admin;
 /**
  *
  * @author carlosguardiola
  */
 public class VentanaPrincipalAdmin extends javax.swing.JFrame {
-
+    
+    private final Admin admin;
     /**
      * Creates new form VentanaPrincipalJugador
      */
-    public VentanaPrincipalAdmin(JFrame VentanaAnterior) {
+    public VentanaPrincipalAdmin(JFrame VentanaAnterior, Admin admin) {
+        this.admin = admin;
         this.ventanaAnterior = VentanaAnterior;
         initComponents();
     }
@@ -34,6 +37,7 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
         botonAdministrar = new javax.swing.JButton();
         botonAddGerente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        botonMorosos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal Jugador");
@@ -85,6 +89,8 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
 
         jButton2.setText("AddEntrenador");
 
+        botonMorosos.setText("Morosos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,13 +98,15 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(botonSalir)
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(botonAddGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonReservar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonPartidos, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(botonMorosos, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(botonAddGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonReservar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonPartidos, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonAdministrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -121,7 +129,9 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAddGerente)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(87, 87, 87)
+                .addComponent(botonMorosos)
+                .addGap(72, 72, 72)
                 .addComponent(botonSalir)
                 .addGap(18, 18, 18))
         );
@@ -150,13 +160,13 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_botonReservarActionPerformed
 
     private void botonAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarActionPerformed
-        VentanaClub clubs = new VentanaClub(this);
+        VentanaClub clubs = new VentanaClub(this,admin,null);
         clubs.setVisible(true);
     }//GEN-LAST:event_botonAdministrarActionPerformed
 
     private void botonAddGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAddGerenteActionPerformed
         // TODO add your handling code here:
-        VentanaAddGerente addGerente = new VentanaAddGerente(this);
+        VentanaAddGerente addGerente = new VentanaAddGerente(this,admin);
         addGerente.setVisible(true);
     }//GEN-LAST:event_botonAddGerenteActionPerformed
 
@@ -165,6 +175,7 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAddGerente;
     private javax.swing.JButton botonAdministrar;
+    private javax.swing.JButton botonMorosos;
     private javax.swing.JButton botonPartidos;
     private javax.swing.JButton botonReservar;
     private javax.swing.JButton botonResponsable;

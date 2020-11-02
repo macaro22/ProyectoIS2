@@ -14,13 +14,14 @@ import proyecto.is2.model.Ajedrez;
 public class Gerente {
     private String nombre;
     private String apellido;
-    private String dni;
+    private int dni;
     private int edad;
     private int nomina;
     private int irpf;
-    protected Ajedrez ajedrez = new Ajedrez();
+    protected Ajedrez ajedrez;
     
-    public Gerente(String nombre, String apellido, String dni, int edad, int nomina, int irpf){
+    
+    public Gerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf, Ajedrez ajedrez){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -33,13 +34,7 @@ public class Gerente {
         return nombre;
     }
     
-    public String getDNI(){
+    public int getDNI(){
         return dni;
     }
-    
-     public Gerente buscarGerente(String dni){
-         Gerente gerente = null;
-         gerente = ajedrez.buscarGerente(dni);
-         return gerente;
-     }
 }

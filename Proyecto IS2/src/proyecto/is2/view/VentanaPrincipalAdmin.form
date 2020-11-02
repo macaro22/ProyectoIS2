@@ -30,11 +30,12 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="388" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="botonMorosos" pref="144" max="32767" attributes="0"/>
                   <Component id="botonAddGerente" max="32767" attributes="0"/>
                   <Component id="botonReservar" alignment="0" max="32767" attributes="0"/>
                   <Component id="botonPartidos" alignment="1" pref="144" max="32767" attributes="0"/>
@@ -67,7 +68,9 @@
                   <Component id="botonAddGerente" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+              <Component id="botonMorosos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
@@ -132,6 +135,11 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="AddEntrenador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonMorosos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Morosos"/>
       </Properties>
     </Component>
   </SubComponents>
