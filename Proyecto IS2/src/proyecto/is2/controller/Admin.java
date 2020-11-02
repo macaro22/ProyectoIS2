@@ -19,6 +19,7 @@ public class Admin {
     public Admin(String usuario, String contrasenya){
         this.usuario = usuario;
         this.contrasenya = contrasenya;
+        ajedrez.cargarDatos();
     }
     
     public void CrearGerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf){

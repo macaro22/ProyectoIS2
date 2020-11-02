@@ -14,14 +14,21 @@ public class Club {
     private String nombre;
     private String sede;
     private Gerente gerente;
+    private String provincia;
     
     
-   public Club(String nombre, String sede){
+   public Club(String nombre, String sede, String provincia, Gerente gerente){
        this.nombre = nombre;
        this.sede = sede;
+       this.provincia = provincia; 
+       this.gerente = gerente;
    }
    
-   public void addGerente(Gerente gerente){
+   public void ModificarGerente(Gerente gerente){
        this.gerente=gerente;
+   }
+   
+   public void ModificarSede(String provincia){
+       this.provincia=provincia;
    }
 }

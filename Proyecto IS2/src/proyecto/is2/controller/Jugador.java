@@ -18,6 +18,7 @@ public class Jugador {
     private int edad;
     private String provincia;
     private String club;
+    private int deuda;
     protected Ajedrez ajedrez = new Ajedrez();
     
     public Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia, String club){

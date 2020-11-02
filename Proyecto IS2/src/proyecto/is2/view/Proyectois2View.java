@@ -19,7 +19,6 @@ public class Proyectois2View extends javax.swing.JFrame {
     public Proyectois2View() {
         initComponents();
         
-        
     }
 
     /**

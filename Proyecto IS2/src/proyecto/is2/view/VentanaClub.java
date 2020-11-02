@@ -172,6 +172,7 @@ public class VentanaClub extends javax.swing.JFrame {
         VentanaModificarClub modificarClub = new VentanaModificarClub(1,this,admin);
         this.setVisible(false);
         modificarClub.setVisible(true);
+        
     }//GEN-LAST:event_botonModificarGerenteActionPerformed
 
     private void comboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciaActionPerformed

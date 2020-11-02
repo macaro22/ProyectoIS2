@@ -109,6 +109,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
+        comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         noombre = admin.EncontrarGerente(dni);
         comboEncontrado.addItem(noombre);
