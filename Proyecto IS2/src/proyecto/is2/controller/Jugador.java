@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecto.is2.controller;
+import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
 /**
  *
@@ -19,9 +20,9 @@ public class Jugador {
     private String provincia;
     private String club;
     private int deuda;
-    protected Ajedrez ajedrez = new Ajedrez();
+    protected Ajedrez ajedrez;
     
-    public Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia, String club){
+    public Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia,String club, int deuda, Ajedrez ajedrez){
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;
@@ -29,10 +30,15 @@ public class Jugador {
         this.edad = edad;
         this.provincia = provincia;
         this.club = club;
+        this.deuda = deuda;
         ajedrez.addUsuarioRegistrado(this);
     }
     
     public String nombre(){
         return nombre;
     }
+    
+    public int getDeuda(){
+        return deuda;
+    }    
 }

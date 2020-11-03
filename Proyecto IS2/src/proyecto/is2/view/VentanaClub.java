@@ -5,6 +5,7 @@
  */
 package proyecto.is2.view;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import proyecto.is2.controller.Admin;
 
@@ -16,6 +17,7 @@ public class VentanaClub extends javax.swing.JFrame {
     
     private final Admin admin;
     String gerente;
+    protected ArrayList provincia = new ArrayList();
     /**
      * Creates new form VentanaClub
      */
@@ -25,13 +27,14 @@ public class VentanaClub extends javax.swing.JFrame {
         this.gerente = gerente;
         initComponents();
         
+        for(int i=0; i<admin.consultarProvincias().size(); i++)
+            comboProvincia.addItem(admin.consultarProvincias().get(i).toString());
+        
         textSede.setEditable(false);
         textGerente.setEditable(false);
         textEntrenador.setEditable(false);
         
-        comboProvincia.addItem("Alicante");
-        comboProvincia.addItem("Castellón");
-        comboProvincia.addItem("Valencia");
+        provincia = admin.consultarProvincias();
         
         textGerente.setText(gerente);
     }
@@ -57,6 +60,7 @@ public class VentanaClub extends javax.swing.JFrame {
         botonModificarGerente = new javax.swing.JButton();
         botonModificarEntrenador = new javax.swing.JButton();
         botonAceptar = new javax.swing.JButton();
+        botonBuscar = new javax.swing.JButton();
 
         setTitle("Información del club");
 
@@ -94,6 +98,13 @@ public class VentanaClub extends javax.swing.JFrame {
 
         botonAceptar.setText("Aceptar");
 
+        botonBuscar.setText("BUSCAR");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,7 +138,10 @@ public class VentanaClub extends javax.swing.JFrame {
                             .addComponent(botonModificarEntrenador)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(botonAceptar)))
+                        .addComponent(botonAceptar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(botonBuscar)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -139,7 +153,9 @@ public class VentanaClub extends javax.swing.JFrame {
                     .addComponent(labelClub)
                     .addComponent(comboProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(botonBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelSede)
@@ -154,7 +170,7 @@ public class VentanaClub extends javax.swing.JFrame {
                     .addComponent(textEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelEntrenador)
                     .addComponent(botonModificarEntrenador))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(botonAceptar)
                 .addGap(27, 27, 27))
         );
@@ -181,24 +197,32 @@ public class VentanaClub extends javax.swing.JFrame {
         switch (provincia) {
             case 0:
                 comboClub.removeAllItems();
-                comboClub.addItem("Alicante1");
-                comboClub.addItem("Alicante2");
-                comboClub.addItem("Alicante");
+                for(int i=0; i<admin.consultarClub("Alicante").size(); i++){
+                    comboClub.addItem(admin.consultarClub("Alicante").get(i).toString());
+                }
                 break;
             case 1:
                 comboClub.removeAllItems();
-                comboClub.addItem("Castellón1");
-                comboClub.addItem("Castellón2");
-                comboClub.addItem("Castellón3");
+                for(int i=0; i<admin.consultarClub("Castellon").size(); i++){
+                    comboClub.addItem(admin.consultarClub("Castellon").get(i).toString());
+                }
                 break;
             default:
                 comboClub.removeAllItems();
-                comboClub.addItem("Valencia1");
-                comboClub.addItem("Valencia2");
-                comboClub.addItem("Valencia3");
+                for(int i=0; i<admin.consultarClub("Valencia").size(); i++){
+                    comboClub.addItem(admin.consultarClub("Valencia").get(i).toString());
+                }
                 break;
         }
     }//GEN-LAST:event_comboProvinciaActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        // TODO add your handling code here:
+        int index = 0;
+        index = comboClub.getSelectedIndex();
+        textSede.setText(admin.consultarClub("Valencia").get(index).toString());
+        textGerente.setText(admin.consultarClub("Valencia").get(index).toString());
+    }//GEN-LAST:event_botonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +231,7 @@ public class VentanaClub extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
+    private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonModificarEntrenador;
     private javax.swing.JButton botonModificarGerente;
     private javax.swing.JButton botonModificarSede;

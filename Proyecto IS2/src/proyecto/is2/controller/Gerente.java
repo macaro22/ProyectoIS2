@@ -34,6 +34,10 @@ public class Gerente {
         return nombre;
     }
     
+    public String getApellidos(){
+        return apellido;
+    }
+    
     public int getDNI(){
         return dni;
     }

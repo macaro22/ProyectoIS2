@@ -111,8 +111,8 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         // TODO add your handling code here:
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
-        noombre = admin.EncontrarGerente(dni);
-        comboEncontrado.addItem(noombre);
+        gerente = admin.EncontrarGerente(dni);
+        comboEncontrado.addItem(gerente.nombre()+" "+gerente.getApellidos());
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

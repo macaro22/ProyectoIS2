@@ -7,7 +7,7 @@ package proyecto.is2.view;
 
 import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
-import proyecto.is2.controller.Jugador;
+import proyecto.is2.controller.Admin;
 
 /**
  *
@@ -15,11 +15,13 @@ import proyecto.is2.controller.Jugador;
  */
 public class VentanaRegistrar extends javax.swing.JFrame {
 
-    private Jugador jugador;
+    private final Admin admin;
     
-    public VentanaRegistrar(JFrame VentanaAnterior) {
+    public VentanaRegistrar(JFrame VentanaAnterior, Admin admin) {
         this.ventanaAnterior = VentanaAnterior;
+        this.admin =admin;
         initComponents();
+        
         comboProvincias.addItem("Alicante");
         comboProvincias.addItem("Castellón");
         comboProvincias.addItem("Valencia");
@@ -178,8 +180,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
         String club = comboClub.getItemAt(comboClub.getSelectedIndex());
         
-        Jugador jugador = new Jugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
-                textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club);
+        admin.CrearJugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
+                textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club,0);
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     

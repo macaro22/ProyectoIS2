@@ -23,4 +23,13 @@ public class Provincia {
     {
         this.clubs.add(club);
     }
+    
+    public ArrayList consultarClub() { 
+       return clubs;
+    }
+    
+    @Override
+    public String toString(){
+        return nombre;
+    }
 }

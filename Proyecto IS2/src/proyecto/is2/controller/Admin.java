@@ -7,6 +7,7 @@ package proyecto.is2.controller;
 
 import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
+import proyecto.is2.model.Provincia;
 /**
  *
  * @author carlosguardiola
@@ -26,7 +27,24 @@ public class Admin {
         ajedrez.CrearGerente(nombre,apellido,dni,edad,nomina,irpf);
     }
     
-    public String EncontrarGerente(int dni){
+    public void CrearJugador(String nombre, String apellido, String usuario, String contrasenya, int edad, String provincia,
+            String club,int deuda){
+        ajedrez.CrearJugador(nombre,apellido,usuario,contrasenya,edad,provincia,club,deuda);
+    }
+    
+    public Gerente EncontrarGerente(int dni){
         return ajedrez.buscarGerente(dni);
     }
+    
+    public ArrayList consultarProvincias() {
+       return ajedrez.consultarProvincias();
+    }
+    
+    public ArrayList consultarClub(String provincia) {
+       return ajedrez.consultarClub(provincia);
+    } 
+    
+    public ArrayList<Jugador> consultarMorosos() {
+       return ajedrez.consultarMorosos();
+    } 
 }

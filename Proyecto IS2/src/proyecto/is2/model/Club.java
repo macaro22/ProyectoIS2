@@ -30,5 +30,15 @@ public class Club {
    
    public void ModificarSede(String provincia){
        this.provincia=provincia;
+    }
+   
+    
+    public String getSede(){
+       return sede;
    }
+    
+    @Override
+    public String toString(){
+        return nombre;
+    }
 }
