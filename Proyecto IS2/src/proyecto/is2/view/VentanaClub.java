@@ -8,34 +8,37 @@ package proyecto.is2.view;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import proyecto.is2.controller.Admin;
+import proyecto.is2.controller.Gerente;
 
 /**
  *
  * @author carlosguardiola
  */
 public class VentanaClub extends javax.swing.JFrame {
-    
+
     private final Admin admin;
+    private Gerente gerent;
     String gerente;
     protected ArrayList provincia = new ArrayList();
+
     /**
      * Creates new form VentanaClub
      */
-    public VentanaClub(JFrame VentanaAnterior, Admin admin, String gerente) {
-        this.ventanaAnterior=VentanaAnterior;
+    public VentanaClub(JFrame VentanaAnterior, Admin admin) {
+        this.ventanaAnterior = VentanaAnterior;
         this.admin = admin;
-        this.gerente = gerente;
         initComponents();
-        
-        for(int i=0; i<admin.consultarProvincias().size(); i++)
+
+        for (int i = 0; i < admin.consultarProvincias().size(); i++) {
             comboProvincia.addItem(admin.consultarProvincias().get(i).toString());
-        
-        textSede.setEditable(false);
+        }
+
+        textSede.setEditable(true);
         textGerente.setEditable(false);
         textEntrenador.setEditable(false);
-        
+
         provincia = admin.consultarProvincias();
-        
+
         textGerente.setText(gerente);
     }
 
@@ -87,6 +90,8 @@ public class VentanaClub extends javax.swing.JFrame {
             }
         });
 
+        textSede.setForeground(new java.awt.Color(102, 102, 102));
+
         botonModificarGerente.setText("Modificar");
         botonModificarGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +102,11 @@ public class VentanaClub extends javax.swing.JFrame {
         botonModificarEntrenador.setText("Modificar");
 
         botonAceptar.setText("Aceptar");
+        botonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAceptarActionPerformed(evt);
+            }
+        });
 
         botonBuscar.setText("BUSCAR");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -179,55 +189,55 @@ public class VentanaClub extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonModificarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarSedeActionPerformed
-        this.setVisible(false);
-        ventanaAnterior.setVisible(true);
+        //this.setVisible(false);
+        //ventanaAnterior.setVisible(true);
+        String club = comboClub.getSelectedItem().toString();
+        String provincia = comboProvincia.getSelectedItem().toString();
+        String sede = textSede.getText();
+        
+        for(int i=0; i<admin.consultarClub(provincia).size();i++)
+            if(admin.consultarClub(provincia).get(i).toString() == club)
+                admin.consultarClub(provincia).get(i).ModificarSede(sede);
     }//GEN-LAST:event_botonModificarSedeActionPerformed
 
     private void botonModificarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarGerenteActionPerformed
         // TODO add your handling code here:
-        VentanaModificarClub modificarClub = new VentanaModificarClub(1,this,admin);
+        String club = comboClub.getSelectedItem().toString();
+        String provincia = comboProvincia.getSelectedItem().toString();
+        VentanaModificarClub modificarClub = new VentanaModificarClub(this, admin, club, provincia);
         this.setVisible(false);
         modificarClub.setVisible(true);
-        
     }//GEN-LAST:event_botonModificarGerenteActionPerformed
 
     private void comboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciaActionPerformed
         // TODO add your handling code here:
-        int provincia = comboProvincia.getSelectedIndex();
-        switch (provincia) {
-            case 0:
-                comboClub.removeAllItems();
-                for(int i=0; i<admin.consultarClub("Alicante").size(); i++){
-                    comboClub.addItem(admin.consultarClub("Alicante").get(i).toString());
-                }
-                break;
-            case 1:
-                comboClub.removeAllItems();
-                for(int i=0; i<admin.consultarClub("Castellon").size(); i++){
-                    comboClub.addItem(admin.consultarClub("Castellon").get(i).toString());
-                }
-                break;
-            default:
-                comboClub.removeAllItems();
-                for(int i=0; i<admin.consultarClub("Valencia").size(); i++){
-                    comboClub.addItem(admin.consultarClub("Valencia").get(i).toString());
-                }
-                break;
+        String provincia = comboProvincia.getSelectedItem().toString();
+        comboClub.removeAllItems();
+        for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
+            comboClub.addItem(admin.consultarClub(provincia).get(i).toString());
         }
     }//GEN-LAST:event_comboProvinciaActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
+        String provincia = comboProvincia.getSelectedItem().toString();
         int index = 0;
         index = comboClub.getSelectedIndex();
-        textSede.setText(admin.consultarClub("Valencia").get(index).toString());
-        textGerente.setText(admin.consultarClub("Valencia").get(index).toString());
+
+        gerent = admin.consultarClub(provincia).get(index).getGerente();
+        textGerente.setText(gerent.nombre() + " " + gerent.getApellidos());
+        textSede.setText(admin.consultarClub(provincia).get(index).getSede());
+
     }//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_botonAceptarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;

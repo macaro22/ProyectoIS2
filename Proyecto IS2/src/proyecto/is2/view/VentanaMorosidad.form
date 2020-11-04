@@ -25,24 +25,24 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="labelMorosos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="botonSaldar" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboMorosos" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="botonSaldar" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboMorosos" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="78" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="botonAceptar" max="32767" attributes="0"/>
-                          <Component id="botonBuscar" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="botonBuscar" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="botonAceptar" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,6 +81,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Saldar Deuda"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSaldarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="comboMorosos">
       <Properties>

@@ -35,7 +35,11 @@ public class Jugador {
     }
     
     public String nombre(){
-        return nombre;
+        return nombre + " "+apellidos;
+    }
+    
+    public void saldarDeuda(){
+        deuda=0;
     }
     
     public int getDeuda(){

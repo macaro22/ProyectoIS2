@@ -18,12 +18,16 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     private Gerente gerente;
     private final Admin admin;
     String noombre;
+    String provincia;
+    String club;
     /**
      * Creates new form VentanaModificarClub
      */
-    public VentanaModificarClub(int buscar, JFrame VentanaAnterior, Admin admin) {
+    public VentanaModificarClub(JFrame VentanaAnterior, Admin admin, String club, String provincia) {
         this.ventanaAnterior=VentanaAnterior;
         this.admin = admin;
+        this.club = club;
+        this.provincia = provincia;
         initComponents();
     }
 
@@ -102,9 +106,10 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        for(int i=0; i<admin.consultarClub(provincia).size();i++)
+            if(admin.consultarClub(provincia).get(i).toString() == club)
+                admin.consultarClub(provincia).get(i).ModificarGerente(gerente);
         ventanaAnterior.setVisible(true);
-        VentanaClub clubs = new VentanaClub(this,admin,noombre);
-        clubs.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
@@ -112,7 +117,8 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         gerente = admin.EncontrarGerente(dni);
-        comboEncontrado.addItem(gerente.nombre()+" "+gerente.getApellidos());
+        noombre = gerente.nombre()+" "+gerente.getApellidos();
+        comboEncontrado.addItem(noombre);
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

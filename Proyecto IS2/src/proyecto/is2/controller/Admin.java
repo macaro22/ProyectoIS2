@@ -8,6 +8,7 @@ package proyecto.is2.controller;
 import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
 import proyecto.is2.model.Provincia;
+import proyecto.is2.model.Club;
 /**
  *
  * @author carlosguardiola
@@ -40,7 +41,7 @@ public class Admin {
        return ajedrez.consultarProvincias();
     }
     
-    public ArrayList consultarClub(String provincia) {
+    public ArrayList<Club> consultarClub(String provincia) {
        return ajedrez.consultarClub(provincia);
     } 
     

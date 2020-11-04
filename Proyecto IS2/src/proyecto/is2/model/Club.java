@@ -28,8 +28,8 @@ public class Club {
        this.gerente=gerente;
    }
    
-   public void ModificarSede(String provincia){
-       this.provincia=provincia;
+   public void ModificarSede(String sede){
+       this.sede=sede;
     }
    
     
@@ -37,6 +37,9 @@ public class Club {
        return sede;
    }
     
+    public Gerente getGerente(){
+       return gerente;
+   }
     @Override
     public String toString(){
         return nombre;

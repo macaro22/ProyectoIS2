@@ -26,6 +26,13 @@ public class VentanaMorosidad extends javax.swing.JFrame {
         this.admin = admin;
         this.ventanaAnterior = VentanaAnterior;
         initComponents();
+        
+        comboMorosos.removeAllItems();
+        
+        for(int i=0; i < admin.consultarMorosos().size(); i++) {
+            jugador = admin.consultarMorosos().get(i);
+            comboMorosos.addItem("Debe "+jugador.getDeuda()+"$  -> "+jugador.nombre());
+        }
     }
 
     /**
@@ -48,6 +55,11 @@ public class VentanaMorosidad extends javax.swing.JFrame {
         botonAceptar.setText("Aceptar");
 
         botonSaldar.setText("Saldar Deuda");
+        botonSaldar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSaldarActionPerformed(evt);
+            }
+        });
 
         botonBuscar.setText("Buscar");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -62,19 +74,19 @@ public class VentanaMorosidad extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(labelMorosos)
-                        .addGap(156, 156, 156))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(249, 249, 249))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonSaldar)
-                            .addComponent(comboMorosos, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(comboMorosos, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botonAceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(50, 50, 50))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonAceptar, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(50, 50, 50))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,15 +109,21 @@ public class VentanaMorosidad extends javax.swing.JFrame {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-        jugador = admin.consultarMorosos().get(0);
-        comboMorosos.addItem(jugador.nombre()+ " Debe "+jugador.getDeuda()+"$");
+        comboMorosos.removeAllItems();
         
-        /**for(int i=1; i < admin.consultarMorosos().size(); i++) {
-            comboMorosos.addItem(admin.consultarMorosos().get(i).toString());;
+        for(int i=0; i < admin.consultarMorosos().size(); i++) {
+            jugador = admin.consultarMorosos().get(i);
+            comboMorosos.addItem("Debe "+jugador.getDeuda()+"$  -> "+jugador.nombre());
         }
-        */
+        
         //comboMorosos.addItem(admin.consultarMorosos().get(i).toString());
     }//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void botonSaldarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSaldarActionPerformed
+        // TODO add your handling code here:
+        jugador = admin.consultarMorosos().get(comboMorosos.getSelectedIndex());
+        jugador.saldarDeuda();
+    }//GEN-LAST:event_botonSaldarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
