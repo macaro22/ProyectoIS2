@@ -9,6 +9,7 @@ import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
 import proyecto.is2.controller.Gerente;
 import proyecto.is2.controller.Admin;
+
 /**
  *
  * @author carlosguardiola
@@ -20,15 +21,17 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     String noombre;
     String provincia;
     String club;
+
     /**
      * Creates new form VentanaModificarClub
      */
     public VentanaModificarClub(JFrame VentanaAnterior, Admin admin, String club, String provincia) {
-        this.ventanaAnterior=VentanaAnterior;
+        this.ventanaAnterior = VentanaAnterior;
         this.admin = admin;
         this.club = club;
         this.provincia = provincia;
         initComponents();
+        areaHistorial.setEditable(false);
     }
 
     /**
@@ -38,11 +41,24 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         textBuscar = new javax.swing.JTextField();
         botonBuscar = new javax.swing.JButton();
         labelBuscar = new javax.swing.JLabel();
-        botonAceptar = new javax.swing.JButton();
+        botonCambioGerente = new javax.swing.JButton();
         comboEncontrado = new javax.swing.JComboBox<>();
+        labelHistorial = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        areaHistorial = new javax.swing.JTextArea();
+        botonVolver = new javax.swing.JButton();
+        labelDatosContrato = new javax.swing.JLabel();
+        textNomina = new javax.swing.JTextField();
+        textIRPF = new javax.swing.JTextField();
+        labelNomina = new javax.swing.JLabel();
+        labelIRPF = new javax.swing.JLabel();
+        botonGuardarContrato = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setTitle("Modificar Club");
 
@@ -55,10 +71,40 @@ public class VentanaModificarClub extends javax.swing.JFrame {
 
         labelBuscar.setText("Buscar por DNI:");
 
-        botonAceptar.setText("Aceptar");
-        botonAceptar.addActionListener(new java.awt.event.ActionListener() {
+        botonCambioGerente.setText("Cambiar Gerente");
+        botonCambioGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAceptarActionPerformed(evt);
+                botonCambioGerenteActionPerformed(evt);
+            }
+        });
+
+        labelHistorial.setText("Historial");
+
+        areaHistorial.setColumns(20);
+        areaHistorial.setRows(5);
+        jScrollPane1.setViewportView(areaHistorial);
+
+        botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
+
+        labelDatosContrato.setText("Modificar datos contrato");
+
+        textNomina.setForeground(new java.awt.Color(102, 102, 102));
+
+        textIRPF.setForeground(new java.awt.Color(102, 102, 102));
+
+        labelNomina.setText("Nómina");
+
+        labelIRPF.setText("IRPF");
+
+        botonGuardarContrato.setText("Guardar ");
+        botonGuardarContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarContratoActionPerformed(evt);
             }
         });
 
@@ -66,67 +112,149 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAceptar)
-                .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelBuscar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(comboEncontrado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                        .addComponent(botonBuscar)
-                        .addGap(48, 48, 48))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelHistorial)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonGuardarContrato))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(comboEncontrado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(textBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botonBuscar)
+                                .addGap(18, 107, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelBuscar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDatosContrato)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(labelIRPF)
+                                        .addComponent(labelNomina)))))
+                        .addGap(13, 13, 13)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonCambioGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(labelBuscar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelBuscar)
+                    .addComponent(labelDatosContrato))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonBuscar))
-                .addGap(37, 37, 37)
-                .addComponent(comboEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
-                .addComponent(botonAceptar)
+                    .addComponent(botonBuscar)
+                    .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelNomina))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelIRPF))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(labelHistorial))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonGuardarContrato)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botonCambioGerente)
+                        .addGap(8, 8, 8)
+                        .addComponent(botonVolver)))
                 .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
+    private void botonCambioGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambioGerenteActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        for(int i=0; i<admin.consultarClub(provincia).size();i++)
-            if(admin.consultarClub(provincia).get(i).toString() == club)
+        for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
+            if (admin.consultarClub(provincia).get(i).toString() == club) {
                 admin.consultarClub(provincia).get(i).ModificarGerente(gerente);
+            }
+        }
         ventanaAnterior.setVisible(true);
-    }//GEN-LAST:event_botonAceptarActionPerformed
+    }//GEN-LAST:event_botonCambioGerenteActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
+        String historialNom, historialIRPF;
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         gerente = admin.EncontrarGerente(dni);
-        noombre = gerente.nombre()+" "+gerente.getApellidos();
+        noombre = gerente.nombre() + " " + gerente.getApellidos();
         comboEncontrado.addItem(noombre);
+
+        textNomina.setText("" + gerente.getNomina());
+        textIRPF.setText("" + gerente.getIRPF());
+
+        historialNom = "";
+        historialIRPF = "";
+
+        for (int i = 0; i < gerente.historialNomina.size(); i++) {
+            historialNom = historialNom + gerente.historialNomina.get(i) + "€, ";
+        }
+
+        for (int i = 0; i < gerente.historialIRPF.size(); i++) {
+            historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + ", ";
+        }
+
+        areaHistorial.setText("CONTRATOS:" + "\n"
+                + "     Sus nóminas han sido: " + historialNom + "." + "\n"
+                + "     Sus IRPF han sido: " + historialIRPF + "." +"\n\n"
+                +"CLUBS ANTERIORES:");
     }//GEN-LAST:event_botonBuscarActionPerformed
 
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        ventanaAnterior.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonGuardarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarContratoActionPerformed
+        // TODO add your handling code here:
+        gerente.setNomina(parseInt(textNomina.getText()));
+        gerente.setIRPF(parseInt(textIRPF.getText()));
+    }//GEN-LAST:event_botonGuardarContratoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAceptar;
+    private javax.swing.JTextArea areaHistorial;
     private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonCambioGerente;
+    private javax.swing.JButton botonGuardarContrato;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JComboBox<String> comboEncontrado;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelBuscar;
+    private javax.swing.JLabel labelDatosContrato;
+    private javax.swing.JLabel labelHistorial;
+    private javax.swing.JLabel labelIRPF;
+    private javax.swing.JLabel labelNomina;
     private javax.swing.JTextField textBuscar;
+    private javax.swing.JTextField textIRPF;
+    private javax.swing.JTextField textNomina;
     // End of variables declaration//GEN-END:variables
     private JFrame ventanaAnterior;
 }

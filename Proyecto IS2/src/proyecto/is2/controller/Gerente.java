@@ -5,13 +5,16 @@
  */
 package proyecto.is2.controller;
 
+import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
+import proyecto.is2.model.Club;
 
 /**
  *
  * @author carlosguardiola
  */
 public class Gerente {
+
     private String nombre;
     private String apellido;
     private int dni;
@@ -19,26 +22,46 @@ public class Gerente {
     private int nomina;
     private int irpf;
     protected Ajedrez ajedrez;
+    public ArrayList<Integer> historialNomina = new ArrayList<Integer>();
+    public ArrayList<Integer> historialIRPF = new ArrayList<Integer>();
     
-    
-    public Gerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf, Ajedrez ajedrez){
+    public Gerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf, Ajedrez ajedrez) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.edad = edad;
+        this.nomina = nomina;
         this.irpf = irpf;
         ajedrez.addGerente(this);
     }
-           
-    public String nombre(){
+
+    public String nombre() {
         return nombre;
     }
-    
-    public String getApellidos(){
+
+    public String getApellidos() {
         return apellido;
     }
-    
-    public int getDNI(){
+
+    public int getDNI() {
         return dni;
+    }
+
+    public int getNomina() {
+        return nomina;
+    }
+    
+    public int getIRPF(){
+        return irpf;
+    }
+    
+    public void setNomina(int nominaa){
+        historialNomina.add(nomina);
+        this.nomina=nominaa;
+    }
+    
+    public void setIRPF (int irpf){
+        historialIRPF.add(this.irpf);
+        this.irpf = irpf;
     }
 }

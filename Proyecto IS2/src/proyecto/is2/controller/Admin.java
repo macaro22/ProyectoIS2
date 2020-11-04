@@ -48,4 +48,8 @@ public class Admin {
     public ArrayList<Jugador> consultarMorosos() {
        return ajedrez.consultarMorosos();
     } 
+    
+    public Jugador ComprobarJugador(String usuario){
+        return ajedrez.ComprobarJugador(usuario);
+    }
 }

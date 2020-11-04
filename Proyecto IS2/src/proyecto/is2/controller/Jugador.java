@@ -45,4 +45,14 @@ public class Jugador {
     public int getDeuda(){
         return deuda;
     }    
+    
+    public String getUsuario(){
+        return usuario;
+    }
+    public String getContrasenya(){
+        return contrasenya;
+    }
+    public int getEdad(){
+        return edad;
+    }
 }

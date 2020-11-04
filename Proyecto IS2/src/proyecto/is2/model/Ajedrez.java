@@ -42,7 +42,7 @@ public class Ajedrez {
     }
 
     public Gerente buscarGerente(int dni) {
-        
+
         for (int i = 0; i < gerentes.size(); i++) {
             if (gerentes.get(i).getDNI() == dni) {
                 return gerentes.get(i);
@@ -67,7 +67,7 @@ public class Ajedrez {
 
     public ArrayList consultarMorosos() {
         morosos.clear();
-        
+
         for (int i = 0; i < jugadoresRegistrados.size(); i++) {
             if (jugadoresRegistrados.get(i).getDeuda() != 0) {
                 morosos.add(jugadoresRegistrados.get(i));
@@ -75,19 +75,31 @@ public class Ajedrez {
         }
         return morosos;
     }
-    
+
+    public Jugador ComprobarJugador(String usuario) {
+       
+        Jugador jugadors = null;
+        
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if(jugadoresRegistrados.get(i).getUsuario().equals(usuario)){
+                jugadors =jugadoresRegistrados.get(i);
+                return jugadors;
+            }
+        }
+        return jugadors;
+    }
 
     public void cargarDatos() {
         Jugador jugador0 = new Jugador("Carlos", "Guardiola", "guarboix", "guarboix", 21, "", "", 0, this);
         Jugador jugador1 = new Jugador("Maria", "Cano", "marcano", "marcano", 21, "", "", 0, this);
-        Jugador jugador2 = new Jugador("Pepe", "Garcia", "elpepe", "elpepe", 21, "", "", 200, this);
+        Jugador jugador2 = new Jugador("Pepe", "Garcia", "elpepe", "elpepe", 17, "", "", 200, this);
         Jugador jugador3 = new Jugador("Pepa", "Gutierrez", "lapepa", "lapepa", 21, "", "", 50, this);
 
         Gerente gerente0 = new Gerente("Sharly", "Boix", 12345678, 21, 2000, 10, this);
         Gerente gerente1 = new Gerente("Amanda", "Rondas", 87654321, 33, 2210, 10, this);
         Gerente gerente2 = new Gerente("Alejandro", "Mreno", 12387645, 28, 3500, 10, this);
         Gerente gerente3 = new Gerente("Lucia", "Fernandez", 87612345, 25, 1900, 10, this);
-        Gerente gerente4 = new Gerente("Paco", "Agallas", 11111111,45,2300,10,this);
+        Gerente gerente4 = new Gerente("Paco", "Agallas", 11111111, 45, 2300, 10, this);
 
         this.addGerente(gerente1);
 

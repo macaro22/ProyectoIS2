@@ -6,7 +6,9 @@
 package proyecto.is2.view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
+import proyecto.is2.controller.Jugador;
 
 /**
  *
@@ -14,11 +16,11 @@ import proyecto.is2.controller.Admin;
  */
 public class Proyectois2View extends javax.swing.JFrame {
 
-    private Admin admins = new Admin("admin","admin");
-    
+    private Admin admins = new Admin("admin", "admin");
+
     public Proyectois2View() {
         initComponents();
-        
+
     }
 
     /**
@@ -61,9 +63,9 @@ public class Proyectois2View extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelUsuario)
                             .addComponent(labelContrasenya))
@@ -71,17 +73,16 @@ public class Proyectois2View extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textContrasenya)
                             .addComponent(textUsuario)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(botonEntrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(botonRegistrar)))
-                .addGap(62, 62, 62))
+                .addGap(90, 90, 90))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelUsuario))
@@ -93,31 +94,38 @@ public class Proyectois2View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEntrar)
                     .addComponent(botonRegistrar))
-                .addGap(48, 48, 48))
+                .addGap(70, 70, 70))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
-        
+
         String usuario = textUsuario.getText();
-        
-        if("admin".equals(usuario)){
-            VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this,admins);
-            this.setVisible(false);
-            admin.setVisible(true);
-        }
-        else{
-            VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this);
-            this.setVisible(false);
-            principal.setVisible(true);  
-            
+        String contrasenya = textContrasenya.getText();
+        Jugador jugador = admins.ComprobarJugador(usuario);
+
+        if (jugador != null || "admin".equals(usuario)){
+            if ("admin".equals(usuario)) {
+                VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this, admins);
+                this.setVisible(false);
+                admin.setVisible(true);
+            } else if (jugador.getContrasenya().equals(contrasenya)) {
+                VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this,jugador);
+                this.setVisible(false);
+                principal.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "La contraseña no es correcta", "error iniciar", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "El usuario no existe", "error iniciar", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botonEntrarActionPerformed
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-        VentanaRegistrar registrar = new VentanaRegistrar(this,admins);
+        VentanaRegistrar registrar = new VentanaRegistrar(this, admins);
         this.setVisible(false);
         registrar.setVisible(true);
     }//GEN-LAST:event_botonRegistrarActionPerformed

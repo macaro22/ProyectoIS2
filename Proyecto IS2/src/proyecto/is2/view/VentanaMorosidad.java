@@ -53,6 +53,11 @@ public class VentanaMorosidad extends javax.swing.JFrame {
         labelMorosos.setText("Morosos y sus deudas:");
 
         botonAceptar.setText("Aceptar");
+        botonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAceptarActionPerformed(evt);
+            }
+        });
 
         botonSaldar.setText("Saldar Deuda");
         botonSaldar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +129,11 @@ public class VentanaMorosidad extends javax.swing.JFrame {
         jugador = admin.consultarMorosos().get(comboMorosos.getSelectedIndex());
         jugador.saldarDeuda();
     }//GEN-LAST:event_botonSaldarActionPerformed
+
+    private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_botonAceptarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;

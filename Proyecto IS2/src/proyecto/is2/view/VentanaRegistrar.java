@@ -54,7 +54,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registrar Jugador");
 
-        labelNombre.setText("Nombre y Apellido");
+        labelNombre.setText("Nombre");
 
         labelEdad.setText("Edad");
 
@@ -123,7 +123,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                             .addComponent(textApellidos)
                             .addComponent(comboProvincias, 0, 70, Short.MAX_VALUE)
                             .addComponent(comboClub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,9 +173,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
 
     
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-        VentanaPrincipalJugador principal = new VentanaPrincipalJugador(ventanaAnterior);
         this.setVisible(false);
-        principal.setVisible(true);
+        ventanaAnterior.setVisible(true);
         
         String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
         String club = comboClub.getItemAt(comboClub.getSelectedIndex());
