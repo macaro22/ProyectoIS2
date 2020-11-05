@@ -45,6 +45,7 @@
                   <Component id="botonAdministrar" max="32767" attributes="0"/>
                   <Component id="botonResponsable" max="32767" attributes="0"/>
                   <Component id="jButton2" max="32767" attributes="0"/>
+                  <Component id="botonAdministrarJugador" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
           </Group>
@@ -69,7 +70,10 @@
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-              <Component id="botonMorosos" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botonMorosos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonAdministrarJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -143,6 +147,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonMorososActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botonAdministrarJugador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Admin Jugador"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAdministrarJugadorActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

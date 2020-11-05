@@ -28,9 +28,9 @@ public class Admin {
         ajedrez.CrearGerente(nombre,apellido,dni,edad,nomina,irpf);
     }
     
-    public void CrearJugador(String nombre, String apellido, String usuario, String contrasenya, int edad, String provincia,
+    public void CrearJugador(String nombre, String apellido, int dni, String usuario, String contrasenya, int edad, String provincia,
             String club,int deuda){
-        ajedrez.CrearJugador(nombre,apellido,usuario,contrasenya,edad,provincia,club,deuda);
+        ajedrez.CrearJugador(nombre,apellido,dni,usuario,contrasenya,edad,provincia,club,deuda);
     }
     
     public Gerente EncontrarGerente(int dni){
@@ -51,5 +51,9 @@ public class Admin {
     
     public Jugador ComprobarJugador(String usuario){
         return ajedrez.ComprobarJugador(usuario);
+    }
+    
+    public Jugador SeleccionarJugador(int dni){
+        return ajedrez.SeleccionarJugador(dni);
     }
 }

@@ -28,6 +28,11 @@
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="botonEntrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="botonRegistrar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="labelUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="labelContrasenya" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -38,13 +43,15 @@
                           <Component id="textUsuario" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="botonEntrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                      <Component id="botonRegistrar" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="130" max="32767" attributes="0"/>
+              <Component id="imagenRey" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="imagenReina" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,12 +68,17 @@
                   <Component id="labelContrasenya" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textContrasenya" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botonEntrar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="imagenRey" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="imagenReina" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -101,6 +113,20 @@
     <Component class="javax.swing.JTextField" name="textUsuario">
     </Component>
     <Component class="javax.swing.JPasswordField" name="textContrasenya">
+    </Component>
+    <Component class="javax.swing.JLabel" name="imagenRey">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/Users/carlosguardiola/Desktop/Rey.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="imagenReina">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/Users/carlosguardiola/Desktop/Reina.png"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

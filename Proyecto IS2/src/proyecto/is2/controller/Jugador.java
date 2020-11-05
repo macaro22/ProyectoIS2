@@ -4,27 +4,31 @@
  * and open the template in the editor.
  */
 package proyecto.is2.controller;
+
 import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
+
 /**
  *
  * @author carlosguardiola
  */
 public class Jugador {
-    
+
     private String nombre;
     private String apellidos;
     private String usuario;
     private String contrasenya;
     private int edad;
+    private int dni;
     private String provincia;
     private String club;
     private int deuda;
     protected Ajedrez ajedrez;
-    
-    public Jugador(String nombre, String apellidos, String usuario, String contrasenya, int edad, String provincia,String club, int deuda, Ajedrez ajedrez){
+
+    public Jugador(String nombre, String apellidos, int dni, String usuario, String contrasenya, int edad, String provincia, String club, int deuda, Ajedrez ajedrez) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.dni = dni;
         this.usuario = usuario;
         this.contrasenya = contrasenya;
         this.edad = edad;
@@ -33,26 +37,36 @@ public class Jugador {
         this.deuda = deuda;
         ajedrez.addUsuarioRegistrado(this);
     }
-    
-    public String nombre(){
-        return nombre + " "+apellidos;
+
+    public String nombre() {
+        return nombre + " " + apellidos;
     }
-    
-    public void saldarDeuda(){
-        deuda=0;
+
+    public void saldarDeuda() {
+        deuda = 0;
     }
-    
-    public int getDeuda(){
+
+    public void setDeuda(int deudanueva) {
+        deuda = deudanueva;
+    }
+
+    public int getDeuda() {
         return deuda;
-    }    
-    
-    public String getUsuario(){
+    }
+
+    public String getUsuario() {
         return usuario;
     }
-    public String getContrasenya(){
+
+    public String getContrasenya() {
         return contrasenya;
     }
-    public int getEdad(){
+
+    public int getEdad() {
         return edad;
+    }
+
+    public int getDNI() {
+        return dni;
     }
 }

@@ -38,6 +38,7 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
         botonAddGerente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         botonMorosos = new javax.swing.JButton();
+        botonAdministrarJugador = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal Jugador");
@@ -96,6 +97,13 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
             }
         });
 
+        botonAdministrarJugador.setText("Admin Jugador");
+        botonAdministrarJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAdministrarJugadorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +123,8 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonAdministrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonResponsable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonAdministrarJugador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
@@ -134,7 +143,9 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
                     .addComponent(botonAddGerente)
                     .addComponent(jButton2))
                 .addGap(87, 87, 87)
-                .addComponent(botonMorosos)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonMorosos)
+                    .addComponent(botonAdministrarJugador))
                 .addGap(72, 72, 72)
                 .addComponent(botonSalir)
                 .addGap(18, 18, 18))
@@ -180,11 +191,18 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
         morosos.setVisible(true);
     }//GEN-LAST:event_botonMorososActionPerformed
 
+    private void botonAdministrarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarJugadorActionPerformed
+        // TODO add your handling code here:
+        VentanaAdministrarJugador administrarJugador = new VentanaAdministrarJugador(this,admin);
+        administrarJugador.setVisible(true);
+    }//GEN-LAST:event_botonAdministrarJugadorActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAddGerente;
     private javax.swing.JButton botonAdministrar;
+    private javax.swing.JButton botonAdministrarJugador;
     private javax.swing.JButton botonMorosos;
     private javax.swing.JButton botonPartidos;
     private javax.swing.JButton botonReservar;

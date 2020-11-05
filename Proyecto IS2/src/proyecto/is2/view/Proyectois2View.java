@@ -36,6 +36,8 @@ public class Proyectois2View extends javax.swing.JFrame {
         labelContrasenya = new javax.swing.JLabel();
         textUsuario = new javax.swing.JTextField();
         textContrasenya = new javax.swing.JPasswordField();
+        imagenRey = new javax.swing.JLabel();
+        imagenReina = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
@@ -58,6 +60,10 @@ public class Proyectois2View extends javax.swing.JFrame {
 
         labelContrasenya.setText("Contraseña");
 
+        imagenRey.setIcon(new javax.swing.ImageIcon("/Users/carlosguardiola/Desktop/Rey.png")); // NOI18N
+
+        imagenReina.setIcon(new javax.swing.ImageIcon("/Users/carlosguardiola/Desktop/Reina.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,18 +72,24 @@ public class Proyectois2View extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonEntrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonRegistrar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelUsuario)
                             .addComponent(labelContrasenya))
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textContrasenya)
-                            .addComponent(textUsuario)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonEntrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                        .addComponent(botonRegistrar)))
+                            .addComponent(textUsuario))))
                 .addGap(90, 90, 90))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addComponent(imagenRey)
+                .addGap(31, 31, 31)
+                .addComponent(imagenReina)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,11 +102,15 @@ public class Proyectois2View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelContrasenya)
                     .addComponent(textContrasenya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEntrar)
                     .addComponent(botonRegistrar))
-                .addGap(70, 70, 70))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagenRey, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(imagenReina, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -168,6 +184,8 @@ public class Proyectois2View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonEntrar;
     private javax.swing.JButton botonRegistrar;
+    private javax.swing.JLabel imagenReina;
+    private javax.swing.JLabel imagenRey;
     private javax.swing.JLabel labelContrasenya;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JPasswordField textContrasenya;

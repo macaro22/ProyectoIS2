@@ -22,9 +22,9 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         this.admin =admin;
         initComponents();
         
-        comboProvincias.addItem("Alicante");
-        comboProvincias.addItem("Castellón");
-        comboProvincias.addItem("Valencia");
+         for (int i = 0; i < admin.consultarProvincias().size(); i++) {
+            comboProvincias.addItem(admin.consultarProvincias().get(i).toString());
+        }
     }
 
     /**
@@ -34,6 +34,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         labelNombre = new javax.swing.JLabel();
         labelEdad = new javax.swing.JLabel();
         labelProvincia = new javax.swing.JLabel();
@@ -50,6 +51,10 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         comboClub = new javax.swing.JComboBox<>();
         labelApellidos = new javax.swing.JLabel();
         textApellidos = new javax.swing.JTextField();
+        labelDNI = new javax.swing.JLabel();
+        textDNI = new javax.swing.JTextField();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registrar Jugador");
@@ -94,6 +99,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
 
         labelApellidos.setText("Apellidos");
 
+        labelDNI.setText("DNI");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,7 +120,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                             .addComponent(labelUsuario)
                             .addComponent(labelContrasenya)
                             .addComponent(labelClub)
-                            .addComponent(labelApellidos))
+                            .addComponent(labelApellidos)
+                            .addComponent(labelDNI))
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -122,7 +130,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                             .addComponent(textEdad)
                             .addComponent(textApellidos)
                             .addComponent(comboProvincias, 0, 70, Short.MAX_VALUE)
-                            .addComponent(comboClub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(comboClub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textDNI))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -136,6 +145,10 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelApellidos))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelDNI)
+                    .addComponent(textDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsuario)
@@ -156,7 +169,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelClub)
                     .addComponent(comboClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolver)
                     .addComponent(botonRegistrar))
@@ -179,33 +192,17 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
         String club = comboClub.getItemAt(comboClub.getSelectedIndex());
         
-        admin.CrearJugador(textNombre.getText(), textApellidos.getText(), textUsuario.getText(), 
+        admin.CrearJugador(textNombre.getText(), textApellidos.getText(),parseInt(textDNI.getText()), textUsuario.getText(), 
                 textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club,0);
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     
     private void comboProvinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciasActionPerformed
         // TODO add your handling code here:
-        int provincia = comboProvincias.getSelectedIndex();
-        switch (provincia) {
-            case 0:
-                comboClub.removeAllItems();
-                comboClub.addItem("Alicante1");
-                comboClub.addItem("Alicante2");
-                comboClub.addItem("Alicante");
-                break;
-            case 1:
-                comboClub.removeAllItems();
-                comboClub.addItem("Castellón1");
-                comboClub.addItem("Castellón2");
-                comboClub.addItem("Castellón3");
-                break;
-            default:
-                comboClub.removeAllItems();
-                comboClub.addItem("Valencia1");
-                comboClub.addItem("Valencia2");
-                comboClub.addItem("Valencia3");
-                break;
+        String provincia = comboProvincias.getSelectedItem().toString();
+        comboClub.removeAllItems();
+        for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
+            comboClub.addItem(admin.consultarClub(provincia).get(i).toString());
         }
     }//GEN-LAST:event_comboProvinciasActionPerformed
 
@@ -219,15 +216,18 @@ public class VentanaRegistrar extends javax.swing.JFrame {
     private javax.swing.JButton botonVolver;
     private javax.swing.JComboBox<String> comboClub;
     private javax.swing.JComboBox<String> comboProvincias;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelApellidos;
     private javax.swing.JLabel labelClub;
     private javax.swing.JLabel labelContrasenya;
+    private javax.swing.JLabel labelDNI;
     private javax.swing.JLabel labelEdad;
     private javax.swing.JLabel labelNombre;
     private javax.swing.JLabel labelProvincia;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JTextField textApellidos;
     private javax.swing.JTextField textContrasenya;
+    private javax.swing.JTextField textDNI;
     private javax.swing.JTextField textEdad;
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField textUsuario;

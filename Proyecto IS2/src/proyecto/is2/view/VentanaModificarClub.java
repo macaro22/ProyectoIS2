@@ -7,6 +7,7 @@ package proyecto.is2.view;
 
 import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import proyecto.is2.controller.Gerente;
 import proyecto.is2.controller.Admin;
 
@@ -203,6 +204,8 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         gerente = admin.EncontrarGerente(dni);
+        
+        if(gerente != null){
         noombre = gerente.nombre() + " " + gerente.getApellidos();
         comboEncontrado.addItem(noombre);
 
@@ -217,13 +220,16 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         }
 
         for (int i = 0; i < gerente.historialIRPF.size(); i++) {
-            historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + ", ";
+            historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + "%, ";
         }
 
         areaHistorial.setText("CONTRATOS:" + "\n"
                 + "     Sus nóminas han sido: " + historialNom + "." + "\n"
                 + "     Sus IRPF han sido: " + historialIRPF + "." +"\n\n"
                 +"CLUBS ANTERIORES:");
+        }else
+            JOptionPane.showMessageDialog(this, "No se ha encontrado el gerente", "error gerente seleccionado", JOptionPane.ERROR_MESSAGE);
+        
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
