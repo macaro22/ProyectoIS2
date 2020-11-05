@@ -10,11 +10,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+
 /**
  *
  * @author carlosguardiola
  */
 public class GestorAjedrez {
+
     private XStream xstream = null;
     private Ajedrez ajedrez;
 
@@ -28,8 +30,8 @@ public class GestorAjedrez {
         xstream = new XStream(new DomDriver());
 
         try {
-             FileInputStream file_input_xml = new FileInputStream(new File("src/Ajedrez.xml"));
-             ajedrez = (Ajedrez) xstream.fromXML(file_input_xml);
+            FileInputStream file_input_xml = new FileInputStream(new File("src/Ajedrez.xml"));
+            ajedrez = (Ajedrez) xstream.fromXML(file_input_xml);
             if (ajedrez == null) {
                 throw new Exception("Excepción no se encuentra Ajedrez");
             }
@@ -51,12 +53,16 @@ public class GestorAjedrez {
     private void guardarXML() {
         String xml = xstream.toXML(ajedrez);
         try {
-            FileWriter file_output_xml = new FileWriter(new File("src/Ajedrezl.xml"));
+            FileWriter file_output_xml = new FileWriter(new File("src/Ajedrez.xml"));
             file_output_xml.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             file_output_xml.write(xml);
             file_output_xml.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    public Ajedrez getAjezrez() {
+        return ajedrez;
     }
 }

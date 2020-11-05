@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
 import proyecto.is2.controller.Jugador;
 import proyecto.is2.controller.GestorAjedrez;
+import proyecto.is2.model.Ajedrez;
 
 /**
  *
@@ -17,13 +18,17 @@ import proyecto.is2.controller.GestorAjedrez;
  */
 public class Proyectois2View extends javax.swing.JFrame {
 
-    private Admin admins = new Admin("admin", "admin");
+    private Admin admins;
     private GestorAjedrez gestorAjedrez;
+    private Ajedrez ajedrez;
 
     public Proyectois2View() {
         initComponents();
+        
         try {
             gestorAjedrez = new GestorAjedrez();
+            ajedrez = gestorAjedrez.getAjezrez();
+            admins = new Admin("admin","admin",ajedrez);
         } 
         
         catch (Exception e)   {

@@ -16,11 +16,12 @@ import proyecto.is2.model.Club;
 public class Admin {
     private String usuario;
     private String contrasenya;
-    protected Ajedrez ajedrez = new Ajedrez();
+    protected Ajedrez ajedrez;
     
-    public Admin(String usuario, String contrasenya){
+    public Admin(String usuario, String contrasenya, Ajedrez ajedrez){
         this.usuario = usuario;
         this.contrasenya = contrasenya;
+        this.ajedrez = ajedrez;
         ajedrez.cargarDatos();
     }
     
