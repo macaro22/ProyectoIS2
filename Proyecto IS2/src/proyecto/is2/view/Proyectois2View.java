@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
 import proyecto.is2.controller.Jugador;
+import proyecto.is2.controller.GestorAjedrez;
 
 /**
  *
@@ -17,9 +18,17 @@ import proyecto.is2.controller.Jugador;
 public class Proyectois2View extends javax.swing.JFrame {
 
     private Admin admins = new Admin("admin", "admin");
+    private GestorAjedrez gestorAjedrez;
 
     public Proyectois2View() {
         initComponents();
+        try {
+            gestorAjedrez = new GestorAjedrez();
+        } 
+        
+        catch (Exception e)   {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
 
     }
 
@@ -38,6 +47,7 @@ public class Proyectois2View extends javax.swing.JFrame {
         textContrasenya = new javax.swing.JPasswordField();
         imagenRey = new javax.swing.JLabel();
         imagenReina = new javax.swing.JLabel();
+        cerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
@@ -64,6 +74,13 @@ public class Proyectois2View extends javax.swing.JFrame {
 
         imagenReina.setIcon(new javax.swing.ImageIcon("/Users/carlosguardiola/Desktop/Reina.png")); // NOI18N
 
+        cerrar.setText("Cerrar App");
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,7 +102,9 @@ public class Proyectois2View extends javax.swing.JFrame {
                             .addComponent(textUsuario))))
                 .addGap(90, 90, 90))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(cerrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(imagenRey)
                 .addGap(31, 31, 31)
                 .addComponent(imagenReina)
@@ -106,11 +125,17 @@ public class Proyectois2View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEntrar)
                     .addComponent(botonRegistrar))
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imagenRey, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(imagenReina, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imagenRey, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(imagenReina, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cerrar)
+                        .addGap(20, 20, 20))))
         );
 
         pack();
@@ -122,13 +147,13 @@ public class Proyectois2View extends javax.swing.JFrame {
         String contrasenya = textContrasenya.getText();
         Jugador jugador = admins.ComprobarJugador(usuario);
 
-        if (jugador != null || "admin".equals(usuario)){
+        if (jugador != null || "admin".equals(usuario)) {
             if ("admin".equals(usuario)) {
                 VentanaPrincipalAdmin admin = new VentanaPrincipalAdmin(this, admins);
                 this.setVisible(false);
                 admin.setVisible(true);
             } else if (jugador.getContrasenya().equals(contrasenya)) {
-                VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this,jugador);
+                VentanaPrincipalJugador principal = new VentanaPrincipalJugador(this, jugador);
                 this.setVisible(false);
                 principal.setVisible(true);
 
@@ -145,6 +170,12 @@ public class Proyectois2View extends javax.swing.JFrame {
         this.setVisible(false);
         registrar.setVisible(true);
     }//GEN-LAST:event_botonRegistrarActionPerformed
+
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        // TODO add your handling code here:
+         gestorAjedrez.salir();
+         System.exit(0);
+    }//GEN-LAST:event_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +215,7 @@ public class Proyectois2View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonEntrar;
     private javax.swing.JButton botonRegistrar;
+    private javax.swing.JButton cerrar;
     private javax.swing.JLabel imagenReina;
     private javax.swing.JLabel imagenRey;
     private javax.swing.JLabel labelContrasenya;

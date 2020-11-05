@@ -6,6 +6,7 @@
 package proyecto.is2.model;
 
 import java.util.ArrayList;
+import proyecto.is2.controller.GestorAjedrez;
 import proyecto.is2.controller.Gerente;
 import proyecto.is2.controller.Jugador;
 import proyecto.is2.controller.Admin;
@@ -16,6 +17,7 @@ import proyecto.is2.controller.Admin;
  */
 public class Ajedrez {
 
+    protected GestorAjedrez gestorAjedrez;
     protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
     protected ArrayList<Jugador> morosos = new ArrayList<Jugador>();
     protected ArrayList<Gerente> gerentes = new ArrayList<Gerente>();

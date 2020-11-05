@@ -48,6 +48,7 @@ public class VentanaAddGerente extends javax.swing.JFrame {
         textNomina = new javax.swing.JTextField();
         textDNI = new javax.swing.JTextField();
         textIRPF = new javax.swing.JTextField();
+        botonVolver = new javax.swing.JButton();
 
         setTitle("Añadir Gerente");
 
@@ -70,6 +71,13 @@ public class VentanaAddGerente extends javax.swing.JFrame {
             }
         });
 
+        botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,15 +85,19 @@ public class VentanaAddGerente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelApellidos)
-                            .addComponent(labelDNI)
-                            .addComponent(labelEdad)
-                            .addComponent(labelNomina)
-                            .addComponent(labelIRPF)
-                            .addComponent(labelNombre))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelApellidos)
+                                .addComponent(labelDNI)
+                                .addComponent(labelEdad)
+                                .addComponent(labelNomina)
+                                .addComponent(labelIRPF)
+                                .addComponent(labelNombre))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonVolver)
+                                .addGap(10, 10, 10)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,7 +108,7 @@ public class VentanaAddGerente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonAnyadir)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +138,9 @@ public class VentanaAddGerente extends javax.swing.JFrame {
                     .addComponent(labelIRPF)
                     .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(botonAnyadir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAnyadir)
+                    .addComponent(botonVolver))
                 .addGap(25, 25, 25))
         );
 
@@ -141,8 +155,14 @@ public class VentanaAddGerente extends javax.swing.JFrame {
         ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonAnyadirActionPerformed
 
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_botonVolverActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnyadir;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel labelApellidos;
     private javax.swing.JLabel labelDNI;
     private javax.swing.JLabel labelEdad;
