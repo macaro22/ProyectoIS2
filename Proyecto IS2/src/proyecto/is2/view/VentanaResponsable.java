@@ -17,7 +17,7 @@ public class VentanaResponsable extends javax.swing.JFrame {
      * Creates new form VentanaResponsable
      */
     public VentanaResponsable(JFrame VentanaAnterior) {
-        this.ventanaAnterior=VentanaAnterior;
+        this.ventanaAnterior = VentanaAnterior;
         initComponents();
     }
 
@@ -111,7 +111,7 @@ public class VentanaResponsable extends javax.swing.JFrame {
         ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.JLabel labelDescripcion;

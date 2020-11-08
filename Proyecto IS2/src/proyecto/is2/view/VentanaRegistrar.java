@@ -7,6 +7,7 @@ package proyecto.is2.view;
 
 import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
 
 /**
@@ -16,13 +17,13 @@ import proyecto.is2.controller.Admin;
 public class VentanaRegistrar extends javax.swing.JFrame {
 
     private final Admin admin;
-    
+
     public VentanaRegistrar(JFrame VentanaAnterior, Admin admin) {
         this.ventanaAnterior = VentanaAnterior;
-        this.admin =admin;
+        this.admin = admin;
         initComponents();
-        
-         for (int i = 0; i < admin.consultarProvincias().size(); i++) {
+
+        for (int i = 0; i < admin.consultarProvincias().size(); i++) {
             comboProvincias.addItem(admin.consultarProvincias().get(i).toString());
         }
     }
@@ -184,19 +185,24 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
-    
+
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
-        this.setVisible(false);
-        ventanaAnterior.setVisible(true);
-        
-        String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
-        String club = comboClub.getItemAt(comboClub.getSelectedIndex());
-        
-        admin.CrearJugador(textNombre.getText(), textApellidos.getText(),parseInt(textDNI.getText()), textUsuario.getText(), 
-                textContrasenya.getText(),parseInt(textEdad.getText()), provincia, club,0);
+
+        try {
+            String provincia = comboProvincias.getItemAt(comboProvincias.getSelectedIndex());
+            String club = comboClub.getItemAt(comboClub.getSelectedIndex());
+
+            admin.CrearJugador(textNombre.getText(), textApellidos.getText(), parseInt(textDNI.getText()), textUsuario.getText(),
+                    textContrasenya.getText(), parseInt(textEdad.getText()), provincia, club, 0);
+            this.setVisible(false);
+            ventanaAnterior.setVisible(true);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Introduce todos los datos para continuar", "error añadir jugador", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
-    
+
     private void comboProvinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciasActionPerformed
         // TODO add your handling code here:
         String provincia = comboProvincias.getSelectedItem().toString();

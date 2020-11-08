@@ -12,24 +12,24 @@ import java.util.ArrayList;
  * @author carlosguardiola
  */
 public class Provincia {
+
     private String nombre;
     private ArrayList<Club> clubs = new ArrayList<Club>();
-    
+
     public Provincia(String nombre) {
         this.nombre = nombre;
     }
-    
-    public void addClub(Club club)
-    {
+
+    public void addClub(Club club) {
         this.clubs.add(club);
     }
-    
-    public ArrayList consultarClub() { 
-       return clubs;
+
+    public ArrayList consultarClub() {
+        return clubs;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return nombre;
     }
 }

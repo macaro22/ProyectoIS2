@@ -81,35 +81,43 @@ public class Ajedrez {
     }
 
     public Jugador ComprobarJugador(String usuario) {
-       
+
         Jugador jugadors = null;
-        
+
         for (int i = 0; i < jugadoresRegistrados.size(); i++) {
-            if(jugadoresRegistrados.get(i).getUsuario().equals(usuario)){
-                jugadors =jugadoresRegistrados.get(i);
-                return jugadors;
-            }
-        }
-        return jugadors;
-    }
-    
-    public Jugador SeleccionarJugador(int dni){
-        Jugador jugadors = null;
-        
-        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
-            if(jugadoresRegistrados.get(i).getDNI()==dni){
-                jugadors =jugadoresRegistrados.get(i);
+            if (jugadoresRegistrados.get(i).getUsuario().equals(usuario)) {
+                jugadors = jugadoresRegistrados.get(i);
                 return jugadors;
             }
         }
         return jugadors;
     }
 
+    public Jugador SeleccionarJugador(int dni) {
+        Jugador jugadors = null;
+
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getDNI() == dni) {
+                jugadors = jugadoresRegistrados.get(i);
+                return jugadors;
+            }
+        }
+        return jugadors;
+    }
+
+    public void darBajaJugador(Jugador jugadoborrar) {
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getDNI() == jugadoborrar.getDNI()) {
+                jugadoresRegistrados.remove(i);
+            }
+        }
+    }
+
     public void cargarDatos() {
-        Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222,"guarboix", "guarboix", 21, "", "", 0, this);
-        Jugador jugador1 = new Jugador("Maria", "Cano", 33333333,"marcano", "marcano", 21, "", "", 0, this);
-        Jugador jugador2 = new Jugador("Pepe", "Garcia", 44444444,"elpepe", "elpepe", 17, "", "", 200, this);
-        Jugador jugador3 = new Jugador("Pepa", "Gutierrez", 55555555,"lapepa", "lapepa", 21, "", "", 50, this);
+        Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222, "guarboix", "guarboix", 21, "", "", 0, this);
+        Jugador jugador1 = new Jugador("Maria", "Cano", 33333333, "marcano", "marcano", 21, "", "", 0, this);
+        Jugador jugador2 = new Jugador("Pepe", "Garcia", 44444444, "elpepe", "elpepe", 17, "", "", 200, this);
+        Jugador jugador3 = new Jugador("Pepa", "Gutierrez", 55555555, "lapepa", "lapepa", 21, "", "", 50, this);
 
         Gerente gerente0 = new Gerente("Sharly", "Boix", 12345678, 21, 2000, 3, this);
         Gerente gerente1 = new Gerente("Amanda", "Rondas", 87654321, 33, 2210, 3, this);

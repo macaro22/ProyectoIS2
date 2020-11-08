@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecto.is2.view;
+
 import proyecto.is2.controller.Jugador;
 import javax.swing.JFrame;
 
@@ -12,18 +13,19 @@ import javax.swing.JFrame;
  * @author carlosguardiola
  */
 public class VentanaReserva extends javax.swing.JFrame {
+
     private Jugador jugador;
 
     /**
      * Creates new form VentanaReserva
      */
     public VentanaReserva(JFrame VentanaAnterior) {
-        this.ventanaAnterior=VentanaAnterior;
+        this.ventanaAnterior = VentanaAnterior;
         initComponents();
         comboProvincia.addItem("Alicante");
         comboProvincia.addItem("Valencia");
         comboProvincia.addItem("Catellon");
-        
+
     }
 
     /**
@@ -116,16 +118,16 @@ public class VentanaReserva extends javax.swing.JFrame {
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         VentanaReserva reserva = new VentanaReserva(ventanaAnterior);
         this.setVisible(false);
-       
+
         reserva.setVisible(true);
-        
+
         String provincia = comboProvincia.getItemAt(comboProvincia.getSelectedIndex());
         String club = comboSede.getItemAt(comboSede.getSelectedIndex());
-        
+
         //Falta añadir jugador
-        
+
     }//GEN-LAST:event_botonAceptarActionPerformed
-    private void comboProvinciaActionPerformed(java.awt.event.ActionEvent evt){
+    private void comboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {
         int provincia = comboProvincia.getSelectedIndex();
         switch (provincia) {
             case 0:
@@ -148,7 +150,7 @@ public class VentanaReserva extends javax.swing.JFrame {
                 break;
         }
     }
-  
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.JComboBox<String> comboHora;

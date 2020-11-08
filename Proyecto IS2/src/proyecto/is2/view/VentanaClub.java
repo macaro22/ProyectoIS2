@@ -194,10 +194,12 @@ public class VentanaClub extends javax.swing.JFrame {
         String club = comboClub.getSelectedItem().toString();
         String provincia = comboProvincia.getSelectedItem().toString();
         String sede = textSede.getText();
-        
-        for(int i=0; i<admin.consultarClub(provincia).size();i++)
-            if(admin.consultarClub(provincia).get(i).toString() == club)
+
+        for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
+            if (admin.consultarClub(provincia).get(i).toString() == club) {
                 admin.consultarClub(provincia).get(i).ModificarSede(sede);
+            }
+        }
     }//GEN-LAST:event_botonModificarSedeActionPerformed
 
     private void botonModificarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarGerenteActionPerformed

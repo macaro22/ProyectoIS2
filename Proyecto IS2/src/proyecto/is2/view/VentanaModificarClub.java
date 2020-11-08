@@ -58,6 +58,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         labelNomina = new javax.swing.JLabel();
         labelIRPF = new javax.swing.JLabel();
         botonGuardarContrato = new javax.swing.JButton();
+        imagenPerfil = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -109,6 +110,9 @@ public class VentanaModificarClub extends javax.swing.JFrame {
             }
         });
 
+        imagenPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/perfil.png"))); // NOI18N
+        imagenPerfil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,7 +120,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -129,59 +133,61 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                                     .addComponent(textBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonBuscar)
-                                .addGap(18, 107, Short.MAX_VALUE)
+                                .addGap(18, 18, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(labelBuscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelDatosContrato)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(labelIRPF)
                                         .addComponent(labelNomina)))))
                         .addGap(13, 13, 13)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonCambioGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30))
+                    .addComponent(botonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(imagenPerfil)))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelBuscar)
-                    .addComponent(labelDatosContrato))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonBuscar)
-                    .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNomina))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelIRPF))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(labelHistorial))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonGuardarContrato)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(imagenPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonCambioGerente)
                         .addGap(8, 8, 8)
-                        .addComponent(botonVolver)))
-                .addGap(30, 30, 30))
+                        .addComponent(botonVolver))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelBuscar)
+                            .addComponent(labelDatosContrato))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonBuscar)
+                            .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNomina))
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIRPF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonGuardarContrato)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelHistorial)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -200,36 +206,39 @@ public class VentanaModificarClub extends javax.swing.JFrame {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
+
         String historialNom, historialIRPF;
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         gerente = admin.EncontrarGerente(dni);
-        
-        if(gerente != null){
-        noombre = gerente.nombre() + " " + gerente.getApellidos();
-        comboEncontrado.addItem(noombre);
 
-        textNomina.setText("" + gerente.getNomina());
-        textIRPF.setText("" + gerente.getIRPF());
+        if (gerente != null) {
+            noombre = gerente.nombre() + " " + gerente.getApellidos();
+            comboEncontrado.addItem(noombre);
 
-        historialNom = "";
-        historialIRPF = "";
+            textNomina.setText("" + gerente.getNomina());
+            textIRPF.setText("" + gerente.getIRPF());
 
-        for (int i = 0; i < gerente.historialNomina.size(); i++) {
-            historialNom = historialNom + gerente.historialNomina.get(i) + "€, ";
-        }
+            historialNom = "";
+            historialIRPF = "";
 
-        for (int i = 0; i < gerente.historialIRPF.size(); i++) {
-            historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + "%, ";
-        }
+            for (int i = 0; i < gerente.historialNomina.size(); i++) {
+                historialNom = historialNom + gerente.historialNomina.get(i) + "€, ";
+            }
 
-        areaHistorial.setText("CONTRATOS:" + "\n"
-                + "     Sus nóminas han sido: " + historialNom + "." + "\n"
-                + "     Sus IRPF han sido: " + historialIRPF + "." +"\n\n"
-                +"CLUBS ANTERIORES:");
-        }else
+            for (int i = 0; i < gerente.historialIRPF.size(); i++) {
+                historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + "%, ";
+            }
+
+            areaHistorial.setText("CONTRATOS:" + "\n"
+                    + "     Sus nóminas han sido: " + historialNom + "." + "\n"
+                    + "     Sus IRPF han sido: " + historialIRPF + "." + "\n\n"
+                    + "CLUBS ANTERIORES:");
+        } else {
             JOptionPane.showMessageDialog(this, "No se ha encontrado el gerente", "error gerente seleccionado", JOptionPane.ERROR_MESSAGE);
-        
+        }
+
+
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
@@ -251,6 +260,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     private javax.swing.JButton botonGuardarContrato;
     private javax.swing.JButton botonVolver;
     private javax.swing.JComboBox<String> comboEncontrado;
+    private javax.swing.JLabel imagenPerfil;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelBuscar;

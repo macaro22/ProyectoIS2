@@ -61,7 +61,7 @@ public class GestorAjedrez {
             e.printStackTrace();
         }
     }
-    
+
     public Ajedrez getAjezrez() {
         return ajedrez;
     }

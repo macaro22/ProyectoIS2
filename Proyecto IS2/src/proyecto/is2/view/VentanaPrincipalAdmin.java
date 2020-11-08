@@ -4,16 +4,19 @@
  * and open the template in the editor.
  */
 package proyecto.is2.view;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
+
 /**
  *
  * @author carlosguardiola
  */
 public class VentanaPrincipalAdmin extends javax.swing.JFrame {
-    
+
     private final Admin admin;
+
     /**
      * Creates new form VentanaPrincipalJugador
      */
@@ -175,28 +178,27 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_botonReservarActionPerformed
 
     private void botonAdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarActionPerformed
-        VentanaClub clubs = new VentanaClub(this,admin);
+        VentanaClub clubs = new VentanaClub(this, admin);
         clubs.setVisible(true);
     }//GEN-LAST:event_botonAdministrarActionPerformed
 
     private void botonAddGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAddGerenteActionPerformed
         // TODO add your handling code here:
-        VentanaAddGerente addGerente = new VentanaAddGerente(this,admin);
+        VentanaAddGerente addGerente = new VentanaAddGerente(this, admin);
         addGerente.setVisible(true);
     }//GEN-LAST:event_botonAddGerenteActionPerformed
 
     private void botonMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMorososActionPerformed
         // TODO add your handling code here:
-        VentanaMorosidad morosos = new VentanaMorosidad(this,admin);
+        VentanaMorosidad morosos = new VentanaMorosidad(this, admin);
         morosos.setVisible(true);
     }//GEN-LAST:event_botonMorososActionPerformed
 
     private void botonAdministrarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarJugadorActionPerformed
         // TODO add your handling code here:
-        VentanaAdministrarJugador administrarJugador = new VentanaAdministrarJugador(this,admin);
+        VentanaAdministrarJugador administrarJugador = new VentanaAdministrarJugador(this, admin);
         administrarJugador.setVisible(true);
     }//GEN-LAST:event_botonAdministrarJugadorActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 import proyecto.is2.controller.Admin;
 import proyecto.is2.controller.Jugador;
 import proyecto.is2.controller.GestorAjedrez;
-import proyecto.is2.model.Ajedrez;
 
 /**
  *
@@ -20,18 +19,14 @@ public class Proyectois2View extends javax.swing.JFrame {
 
     private Admin admins;
     private GestorAjedrez gestorAjedrez;
-    private Ajedrez ajedrez;
 
     public Proyectois2View() {
         initComponents();
-        
+
         try {
             gestorAjedrez = new GestorAjedrez();
-            ajedrez = gestorAjedrez.getAjezrez();
-            admins = new Admin("admin","admin",ajedrez);
-        } 
-        
-        catch (Exception e)   {
+            admins = new Admin("admin", "admin", gestorAjedrez.getAjezrez());
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
 
@@ -75,9 +70,9 @@ public class Proyectois2View extends javax.swing.JFrame {
 
         labelContrasenya.setText("Contraseña");
 
-        imagenRey.setIcon(new javax.swing.ImageIcon("/Users/carlosguardiola/Desktop/Rey.png")); // NOI18N
+        imagenRey.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Rey.png"))); // NOI18N
 
-        imagenReina.setIcon(new javax.swing.ImageIcon("/Users/carlosguardiola/Desktop/Reina.png")); // NOI18N
+        imagenReina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/Reina.png"))); // NOI18N
 
         cerrar.setText("Cerrar App");
         cerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,8 +173,8 @@ public class Proyectois2View extends javax.swing.JFrame {
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
         // TODO add your handling code here:
-         gestorAjedrez.salir();
-         System.exit(0);
+        gestorAjedrez.salir();
+        System.exit(0);
     }//GEN-LAST:event_cerrarActionPerformed
 
     /**

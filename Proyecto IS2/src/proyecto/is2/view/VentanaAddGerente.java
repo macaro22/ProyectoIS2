@@ -7,6 +7,7 @@ package proyecto.is2.view;
 
 import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import proyecto.is2.controller.Gerente;
 import proyecto.is2.controller.Admin;
 
@@ -149,10 +150,14 @@ public class VentanaAddGerente extends javax.swing.JFrame {
 
     private void botonAnyadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnyadirActionPerformed
         // TODO add your handling code here:
-        admin.CrearGerente(textNombre.getText(), textApellidos.getText(), parseInt(textDNI.getText()), parseInt(textEdad.getText()),
-                parseInt(textNomina.getText()), parseInt(textIRPF.getText()));
-        this.setVisible(false);
-        ventanaAnterior.setVisible(true);
+        try {
+            admin.CrearGerente(textNombre.getText(), textApellidos.getText(), parseInt(textDNI.getText()), parseInt(textEdad.getText()),
+                    parseInt(textNomina.getText()), parseInt(textIRPF.getText()));
+            this.setVisible(false);
+            ventanaAnterior.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Introduce todos los datos para continuar", "error añadir gerente", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botonAnyadirActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed

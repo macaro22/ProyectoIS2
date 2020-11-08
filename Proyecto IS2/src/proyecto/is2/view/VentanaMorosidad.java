@@ -26,12 +26,12 @@ public class VentanaMorosidad extends javax.swing.JFrame {
         this.admin = admin;
         this.ventanaAnterior = VentanaAnterior;
         initComponents();
-        
+
         comboMorosos.removeAllItems();
-        
-        for(int i=0; i < admin.consultarMorosos().size(); i++) {
+
+        for (int i = 0; i < admin.consultarMorosos().size(); i++) {
             jugador = admin.consultarMorosos().get(i);
-            comboMorosos.addItem("Debe "+jugador.getDeuda()+"$  -> "+jugador.nombre());
+            comboMorosos.addItem("Debe " + jugador.getDeuda() + "$  -> " + jugador.nombre());
         }
     }
 
@@ -115,12 +115,12 @@ public class VentanaMorosidad extends javax.swing.JFrame {
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
         comboMorosos.removeAllItems();
-        
-        for(int i=0; i < admin.consultarMorosos().size(); i++) {
+
+        for (int i = 0; i < admin.consultarMorosos().size(); i++) {
             jugador = admin.consultarMorosos().get(i);
-            comboMorosos.addItem("Debe "+jugador.getDeuda()+"$  -> "+jugador.nombre());
+            comboMorosos.addItem("Debe " + jugador.getDeuda() + "$  -> " + jugador.nombre());
         }
-        
+
         //comboMorosos.addItem(admin.consultarMorosos().get(i).toString());
     }//GEN-LAST:event_botonBuscarActionPerformed
 

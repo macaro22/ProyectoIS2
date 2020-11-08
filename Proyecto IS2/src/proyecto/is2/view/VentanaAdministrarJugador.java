@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecto.is2.view;
+
 import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -18,6 +19,7 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
     
     private final Admin admin;
     private Jugador jugador;
+
     /**
      * Creates new form VentanaAdministrarJugador
      */
@@ -26,13 +28,11 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         this.ventanaAnterior = VentanaAnterior;
         initComponents();
         textDeudaActual.setEditable(false);
+        botonBaja.setEnabled(false);
     }
-
-    
-    
     
     @SuppressWarnings("unchecked")
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -70,6 +70,11 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         });
 
         botonBaja.setText("Dar de baja");
+        botonBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBajaActionPerformed(evt);
+            }
+        });
 
         textDeudaActual.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -157,16 +162,18 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         dni = parseInt(textBuscar.getText());
         jugador = admin.SeleccionarJugador(dni);
         
-        if(jugador != null){
-        labelNombreJugador.setText(jugador.nombre());
-        textDeudaActual.setText(""+jugador.getDeuda()+"€");
-        
-        if(jugador.getDeuda()>0)
-            botonBaja.setEnabled(false);
-        else
-            botonBaja.setEnabled(true);
-        }else
+        if (jugador != null) {
+            labelNombreJugador.setText(jugador.nombre());
+            textDeudaActual.setText("" + jugador.getDeuda() + "€");
+            
+            if (jugador.getDeuda() > 0) {
+                botonBaja.setEnabled(false);
+            } else {
+                botonBaja.setEnabled(true);
+            }
+        } else {
             JOptionPane.showMessageDialog(this, "No se ha encontrado jugador", "error jugador seleccionado", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void botonAnyadirDeudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnyadirDeudaActionPerformed
@@ -174,23 +181,30 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         int deuda = 0;
         deuda = parseInt(textAnyadirDeuda.getText());
         
-        if(deuda<0){
+        if (deuda < 0) {
             JOptionPane.showMessageDialog(this, "La deuda ha de ser positiva", "error endeudar", JOptionPane.ERROR_MESSAGE);
-        }else
-            jugador.setDeuda(jugador.getDeuda()+deuda);
+        } else {
+            jugador.setDeuda(jugador.getDeuda() + deuda);
+        }
         
-        textDeudaActual.setText(""+jugador.getDeuda()+"€");
+        textDeudaActual.setText("" + jugador.getDeuda() + "€");
         
-        if(jugador.getDeuda()>0)
+        if (jugador.getDeuda() > 0) {
             botonBaja.setEnabled(false);
-        else
+        } else {
             botonBaja.setEnabled(true);
+        }
     }//GEN-LAST:event_botonAnyadirDeudaActionPerformed
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_botonAceptarActionPerformed
+
+    private void botonBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBajaActionPerformed
+        // TODO add your handling code here:
+        admin.darBajaJugador(jugador);
+    }//GEN-LAST:event_botonBajaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

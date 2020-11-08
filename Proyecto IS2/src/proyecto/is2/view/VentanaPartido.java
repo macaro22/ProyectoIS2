@@ -17,7 +17,7 @@ public class VentanaPartido extends javax.swing.JFrame {
      * Creates new form VentanaPartido
      */
     public VentanaPartido(JFrame VentanaAnterior) {
-        this.ventanaAnterior=VentanaAnterior;
+        this.ventanaAnterior = VentanaAnterior;
         initComponents();
     }
 
@@ -133,7 +133,6 @@ public class VentanaPartido extends javax.swing.JFrame {
         ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboSede;

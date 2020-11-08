@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package proyecto.is2.view;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import proyecto.is2.controller.Jugador;
+
 /**
  *
  * @author carlosguardiola
@@ -14,6 +16,7 @@ import proyecto.is2.controller.Jugador;
 public class VentanaPrincipalJugador extends javax.swing.JFrame {
 
     private final Jugador jugador;
+
     /**
      * Creates new form VentanaPrincipalJugador
      */
@@ -21,9 +24,10 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         this.ventanaAnterior = VentanaAnterior;
         this.jugador = jugador;
         initComponents();
-        
-        if(jugador.getEdad()>=18)
-            botonResponsable.setEnabled(false);;
+
+        if (jugador.getEdad() >= 18) {
+            botonResponsable.setEnabled(false);
+        };
     }
 
     /**
@@ -147,7 +151,6 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         VentanaReserva reserva = new VentanaReserva(this);
         reserva.setVisible(true);
     }//GEN-LAST:event_botonReservarActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
