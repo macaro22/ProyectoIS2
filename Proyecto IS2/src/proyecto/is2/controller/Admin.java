@@ -24,7 +24,6 @@ public class Admin {
         this.usuario = usuario;
         this.contrasenya = contrasenya;
         this.ajedrez = ajedrez;
-        ajedrez.cargarDatos();
     }
 
     public void CrearGerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf) {
@@ -62,5 +61,13 @@ public class Admin {
 
     public void darBajaJugador(Jugador jugador) {
         ajedrez.darBajaJugador(jugador);
+    }
+
+    public void anyadirClub(String provincia, String nombre) {
+        ajedrez.anyadirClub(provincia, nombre);
+    }
+
+    public void eliminarClub(String nombre, String provincia) {
+        ajedrez.eliminarClub(nombre, provincia);
     }
 }

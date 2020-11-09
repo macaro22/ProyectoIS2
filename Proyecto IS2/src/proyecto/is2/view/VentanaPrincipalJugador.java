@@ -132,9 +132,8 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        Proyectois2View vista = new Proyectois2View();
         this.setVisible(false);
-        vista.setVisible(true);
+        ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResponsableActionPerformed

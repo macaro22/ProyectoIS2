@@ -113,6 +113,31 @@ public class Ajedrez {
         }
     }
 
+    public void anyadirClub(String provincia, String nombre) {
+        Club club = new Club(nombre, null, provincia, null);
+        clubs.add(club);
+        for (int i = 0; i < provincias.size(); i++) {
+            if (provincias.get(i).toString().equals(provincia)) {
+                provincias.get(i).addClub(club);
+            }
+        }
+    }
+
+    public void eliminarClub(String nombre, String provincia) {
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(nombre)) {
+                clubs.remove(i);
+            }
+        }
+
+        for (int i = 0; i < provincias.size(); i++) {
+            if (provincias.get(i).toString().equals(provincia)) {
+                provincias.get(i).eliminarClub(nombre);
+            }
+        }
+
+    }
+
     public void cargarDatos() {
         Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222, "guarboix", "guarboix", 21, "", "", 0, this);
         Jugador jugador1 = new Jugador("Maria", "Cano", 33333333, "marcano", "marcano", 21, "", "", 0, this);

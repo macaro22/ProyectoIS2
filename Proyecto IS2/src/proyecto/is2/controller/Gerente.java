@@ -24,6 +24,7 @@ public class Gerente {
     protected Ajedrez ajedrez;
     public ArrayList<Integer> historialNomina = new ArrayList<Integer>();
     public ArrayList<Integer> historialIRPF = new ArrayList<Integer>();
+    public ArrayList<String> historialClub = new ArrayList<String>();
 
     public Gerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf, Ajedrez ajedrez) {
         this.nombre = nombre;
@@ -63,5 +64,9 @@ public class Gerente {
     public void setIRPF(int irpf) {
         historialIRPF.add(this.irpf);
         this.irpf = irpf;
+    }
+
+    public void cambioClub(String club) {
+        historialClub.add(club);
     }
 }

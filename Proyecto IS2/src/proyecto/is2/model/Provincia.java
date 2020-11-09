@@ -28,6 +28,14 @@ public class Provincia {
         return clubs;
     }
 
+    public void eliminarClub(String nombre) {
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(nombre)) {
+                clubs.remove(i);
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return nombre;

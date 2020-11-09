@@ -64,6 +64,7 @@ public class VentanaClub extends javax.swing.JFrame {
         botonModificarEntrenador = new javax.swing.JButton();
         botonAceptar = new javax.swing.JButton();
         botonBuscar = new javax.swing.JButton();
+        botonNuevoClub = new javax.swing.JButton();
 
         setTitle("Información del club");
 
@@ -115,6 +116,13 @@ public class VentanaClub extends javax.swing.JFrame {
             }
         });
 
+        botonNuevoClub.setText("Nuevo Club");
+        botonNuevoClub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNuevoClubActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,28 +139,29 @@ public class VentanaClub extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboClub, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(botonBuscar))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelSede)
-                            .addComponent(labelEntrenador)
-                            .addComponent(labelGerente))
-                        .addGap(32, 32, 32)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelSede)
+                                    .addComponent(labelEntrenador)
+                                    .addComponent(labelGerente))
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textSede)
+                                    .addComponent(textGerente)
+                                    .addComponent(textEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(botonNuevoClub))
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textSede)
-                            .addComponent(textGerente)
-                            .addComponent(textEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonModificarSede)
-                            .addComponent(botonModificarGerente)
-                            .addComponent(botonModificarEntrenador)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(botonAceptar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(botonBuscar)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                            .addComponent(botonModificarSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonModificarGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonModificarEntrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonAceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +190,9 @@ public class VentanaClub extends javax.swing.JFrame {
                     .addComponent(labelEntrenador)
                     .addComponent(botonModificarEntrenador))
                 .addGap(18, 18, 18)
-                .addComponent(botonAceptar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAceptar)
+                    .addComponent(botonNuevoClub))
                 .addGap(27, 27, 27))
         );
 
@@ -237,6 +248,13 @@ public class VentanaClub extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
+    private void botonNuevoClubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoClubActionPerformed
+        // TODO add your handling code here:
+        VentanaNuevoClub nuevoClub = new VentanaNuevoClub(this, admin);
+        this.setVisible(false);
+        nuevoClub.setVisible(true);
+    }//GEN-LAST:event_botonNuevoClubActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +265,7 @@ public class VentanaClub extends javax.swing.JFrame {
     private javax.swing.JButton botonModificarEntrenador;
     private javax.swing.JButton botonModificarGerente;
     private javax.swing.JButton botonModificarSede;
+    private javax.swing.JButton botonNuevoClub;
     private javax.swing.JComboBox<String> comboClub;
     private javax.swing.JComboBox<String> comboProvincia;
     private javax.swing.JLabel labelClub;

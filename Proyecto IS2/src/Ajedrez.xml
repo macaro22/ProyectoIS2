@@ -45,52 +45,11 @@
       <club></club>
       <deuda>50</deuda>
     </proyecto.is2.controller.Jugador>
-    <proyecto.is2.controller.Jugador>
-      <nombre>Carlos</nombre>
-      <apellidos>Guardiola</apellidos>
-      <usuario>guarboix</usuario>
-      <contrasenya>guarboix</contrasenya>
-      <edad>21</edad>
-      <dni>22222222</dni>
-      <provincia></provincia>
-      <club></club>
-      <deuda>0</deuda>
-    </proyecto.is2.controller.Jugador>
-    <proyecto.is2.controller.Jugador>
-      <nombre>Maria</nombre>
-      <apellidos>Cano</apellidos>
-      <usuario>marcano</usuario>
-      <contrasenya>marcano</contrasenya>
-      <edad>21</edad>
-      <dni>33333333</dni>
-      <provincia></provincia>
-      <club></club>
-      <deuda>0</deuda>
-    </proyecto.is2.controller.Jugador>
-    <proyecto.is2.controller.Jugador>
-      <nombre>Pepe</nombre>
-      <apellidos>Garcia</apellidos>
-      <usuario>elpepe</usuario>
-      <contrasenya>elpepe</contrasenya>
-      <edad>17</edad>
-      <dni>44444444</dni>
-      <provincia></provincia>
-      <club></club>
-      <deuda>200</deuda>
-    </proyecto.is2.controller.Jugador>
-    <proyecto.is2.controller.Jugador>
-      <nombre>Pepa</nombre>
-      <apellidos>Gutierrez</apellidos>
-      <usuario>lapepa</usuario>
-      <contrasenya>lapepa</contrasenya>
-      <edad>21</edad>
-      <dni>55555555</dni>
-      <provincia></provincia>
-      <club></club>
-      <deuda>50</deuda>
-    </proyecto.is2.controller.Jugador>
   </jugadoresRegistrados>
-  <morosos/>
+  <morosos>
+    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
+    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[4]"/>
+  </morosos>
   <gerentes>
     <proyecto.is2.controller.Gerente>
       <nombre>Sharly</nombre>
@@ -101,6 +60,7 @@
       <irpf>3</irpf>
       <historialNomina/>
       <historialIRPF/>
+      <historialClub/>
     </proyecto.is2.controller.Gerente>
     <proyecto.is2.controller.Gerente>
       <nombre>Amanda</nombre>
@@ -111,6 +71,7 @@
       <irpf>3</irpf>
       <historialNomina/>
       <historialIRPF/>
+      <historialClub/>
     </proyecto.is2.controller.Gerente>
     <proyecto.is2.controller.Gerente>
       <nombre>Alejandro</nombre>
@@ -121,6 +82,7 @@
       <irpf>3</irpf>
       <historialNomina/>
       <historialIRPF/>
+      <historialClub/>
     </proyecto.is2.controller.Gerente>
     <proyecto.is2.controller.Gerente>
       <nombre>Lucia</nombre>
@@ -131,6 +93,7 @@
       <irpf>3</irpf>
       <historialNomina/>
       <historialIRPF/>
+      <historialClub/>
     </proyecto.is2.controller.Gerente>
     <proyecto.is2.controller.Gerente>
       <nombre>Paco</nombre>
@@ -141,59 +104,9 @@
       <irpf>3</irpf>
       <historialNomina/>
       <historialIRPF/>
+      <historialClub/>
     </proyecto.is2.controller.Gerente>
     <proyecto.is2.controller.Gerente reference="../proyecto.is2.controller.Gerente[2]"/>
-    <proyecto.is2.controller.Gerente>
-      <nombre>Sharly</nombre>
-      <apellido>Boix</apellido>
-      <dni>12345678</dni>
-      <edad>21</edad>
-      <nomina>2000</nomina>
-      <irpf>3</irpf>
-      <historialNomina/>
-      <historialIRPF/>
-    </proyecto.is2.controller.Gerente>
-    <proyecto.is2.controller.Gerente>
-      <nombre>Amanda</nombre>
-      <apellido>Rondas</apellido>
-      <dni>87654321</dni>
-      <edad>33</edad>
-      <nomina>2210</nomina>
-      <irpf>3</irpf>
-      <historialNomina/>
-      <historialIRPF/>
-    </proyecto.is2.controller.Gerente>
-    <proyecto.is2.controller.Gerente>
-      <nombre>Alejandro</nombre>
-      <apellido>Mreno</apellido>
-      <dni>12387645</dni>
-      <edad>28</edad>
-      <nomina>3500</nomina>
-      <irpf>3</irpf>
-      <historialNomina/>
-      <historialIRPF/>
-    </proyecto.is2.controller.Gerente>
-    <proyecto.is2.controller.Gerente>
-      <nombre>Lucia</nombre>
-      <apellido>Fernandez</apellido>
-      <dni>87612345</dni>
-      <edad>25</edad>
-      <nomina>1900</nomina>
-      <irpf>3</irpf>
-      <historialNomina/>
-      <historialIRPF/>
-    </proyecto.is2.controller.Gerente>
-    <proyecto.is2.controller.Gerente>
-      <nombre>Paco</nombre>
-      <apellido>Agallas</apellido>
-      <dni>11111111</dni>
-      <edad>45</edad>
-      <nomina>2300</nomina>
-      <irpf>3</irpf>
-      <historialNomina/>
-      <historialIRPF/>
-    </proyecto.is2.controller.Gerente>
-    <proyecto.is2.controller.Gerente reference="../proyecto.is2.controller.Gerente[8]"/>
   </gerentes>
   <clubs>
     <proyecto.is2.model.Club>
@@ -220,30 +133,6 @@
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[4]"/>
       <provincia>Valencia</provincia>
     </proyecto.is2.model.Club>
-    <proyecto.is2.model.Club>
-      <nombre>ShalyClub</nombre>
-      <sede>Ribarroja</sede>
-      <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[7]"/>
-      <provincia>Valencia</provincia>
-    </proyecto.is2.model.Club>
-    <proyecto.is2.model.Club>
-      <nombre>MeryClub</nombre>
-      <sede>Murcia</sede>
-      <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[8]"/>
-      <provincia>Alicante</provincia>
-    </proyecto.is2.model.Club>
-    <proyecto.is2.model.Club>
-      <nombre>loserClub</nombre>
-      <sede>CastellonSity</sede>
-      <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[9]"/>
-      <provincia>Castellon</provincia>
-    </proyecto.is2.model.Club>
-    <proyecto.is2.model.Club>
-      <nombre>WinnerClub</nombre>
-      <sede>Estació den nord</sede>
-      <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[10]"/>
-      <provincia>Valencia</provincia>
-    </proyecto.is2.model.Club>
   </clubs>
   <provincias>
     <proyecto.is2.model.Provincia>
@@ -263,25 +152,6 @@
       <clubs>
         <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club"/>
         <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club[4]"/>
-      </clubs>
-    </proyecto.is2.model.Provincia>
-    <proyecto.is2.model.Provincia>
-      <nombre>Alicante</nombre>
-      <clubs>
-        <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club[6]"/>
-      </clubs>
-    </proyecto.is2.model.Provincia>
-    <proyecto.is2.model.Provincia>
-      <nombre>Castellon</nombre>
-      <clubs>
-        <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club[7]"/>
-      </clubs>
-    </proyecto.is2.model.Provincia>
-    <proyecto.is2.model.Provincia>
-      <nombre>Valencia</nombre>
-      <clubs>
-        <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club[5]"/>
-        <proyecto.is2.model.Club reference="../../../../clubs/proyecto.is2.model.Club[8]"/>
       </clubs>
     </proyecto.is2.model.Provincia>
   </provincias>
