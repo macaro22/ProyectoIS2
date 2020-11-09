@@ -39,6 +39,7 @@ public class Ajedrez {
 
     public void addUsuarioRegistrado(Jugador jugador) {
         jugadoresRegistrados.add(jugador);
+
     }
 
     public void CrearGerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf) {
@@ -112,6 +113,13 @@ public class Ajedrez {
     }
 
     public void darBajaJugador(Jugador jugadoborrar) {
+
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(jugadoborrar.getClub())) {
+                clubs.get(i).eliminarJugadorClub(jugadoborrar);
+            }
+        }
+
         for (int i = 0; i < jugadoresRegistrados.size(); i++) {
             if (jugadoresRegistrados.get(i).getDNI() == jugadoborrar.getDNI()) {
                 jugadoresRegistrados.remove(i);
@@ -145,18 +153,19 @@ public class Ajedrez {
     }
 
     public void cambioClubJugador(String clubAntiguo, String clubNuevo, Jugador jugador) {
-        
-         for (int i = 0; i < clubs.size(); i++) {
+
+        for (int i = 0; i < clubs.size(); i++) {
             if (clubs.get(i).toString().equals(clubAntiguo)) {
                 clubs.get(i).eliminarJugadorClub(jugador);
             }
         }
-        
+
         for (int i = 0; i < clubs.size(); i++) {
             if (clubs.get(i).toString().equals(clubNuevo)) {
                 clubs.get(i).AddJugadorClub(jugador);
             }
         }
+
     }
 
     public void cargarDatos() {
@@ -193,5 +202,10 @@ public class Ajedrez {
         provincia1.addClub(club2);
         provincia2.addClub(club0);
         provincia2.addClub(club3);
+
+        club0.AddJugadorClub(jugador0);
+        club1.AddJugadorClub(jugador1);
+        club2.AddJugadorClub(jugador2);
+        club3.AddJugadorClub(jugador3);
     }
 }

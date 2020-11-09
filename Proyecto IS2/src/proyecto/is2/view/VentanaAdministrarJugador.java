@@ -266,9 +266,14 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
 
     private void botonCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambioActionPerformed
         // TODO add your handling code here:
-        admin.cambioClubJugador(jugador.getClub(),comboClub.getItemAt(comboClub.getSelectedIndex()), jugador);
-        jugador.setClub(comboClub.getItemAt(comboClub.getSelectedIndex()));
+        String clubAntiguo = jugador.getClub();
+        String clubNuevo = comboClub.getItemAt(comboClub.getSelectedIndex());
+        
+        admin.cambioClubJugador(clubAntiguo, clubNuevo, jugador);
+        jugador.setClub(clubNuevo);
         labelClubNombre.setText(jugador.getClub());
+        
+        botonCambio.setEnabled(false);
     }//GEN-LAST:event_botonCambioActionPerformed
 
     private void comboProvinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciasActionPerformed

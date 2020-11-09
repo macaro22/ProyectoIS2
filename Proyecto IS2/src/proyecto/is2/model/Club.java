@@ -54,10 +54,17 @@ public class Club {
     }
 
     public void eliminarJugadorClub(Jugador jugador) {
+        int jugadore = jugadores.size();
         for (int i = 0; i < jugadores.size(); i++) {
             if (jugadores.get(i).nombre().equals(jugador.nombre())) {
                 jugadores.remove(i);
             }
+        }
+    }
+
+    public void mostrar() {
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println(jugadores.get(i).nombre());
         }
     }
 }

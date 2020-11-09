@@ -111,24 +111,36 @@
       <sede>Ribarroja</sede>
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente"/>
       <provincia>Valencia</provincia>
+      <jugadores>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador"/>
+      </jugadores>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>MeryClub</nombre>
       <sede>Murcia</sede>
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[2]"/>
       <provincia>Alicante</provincia>
+      <jugadores>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[2]"/>
+      </jugadores>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>loserClub</nombre>
       <sede>CastellonSity</sede>
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[3]"/>
       <provincia>Castellon</provincia>
+      <jugadores>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
+      </jugadores>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>WinnerClub</nombre>
       <sede>Estació den nord</sede>
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[4]"/>
       <provincia>Valencia</provincia>
+      <jugadores>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[4]"/>
+      </jugadores>
     </proyecto.is2.model.Club>
   </clubs>
   <provincias>
