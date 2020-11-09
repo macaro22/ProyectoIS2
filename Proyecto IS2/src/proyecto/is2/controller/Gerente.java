@@ -66,7 +66,7 @@ public class Gerente {
         this.irpf = irpf;
     }
 
-    public void cambioClub(String club) {
+    public void historialClub(String club) {
         historialClub.add(club);
     }
 }

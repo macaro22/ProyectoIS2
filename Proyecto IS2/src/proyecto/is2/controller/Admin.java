@@ -70,4 +70,8 @@ public class Admin {
     public void eliminarClub(String nombre, String provincia) {
         ajedrez.eliminarClub(nombre, provincia);
     }
+
+    public void cambioClubJugador(String clubAntiguo, String clubNuevo, Jugador jugador){
+        ajedrez.cambioClubJugador(clubAntiguo, clubNuevo, jugador);
+    }
 }

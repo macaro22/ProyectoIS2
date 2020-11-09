@@ -29,6 +29,12 @@ public class Ajedrez {
     public void CrearJugador(String nombre, String apellido, int dni, String usuario, String contrasenya, int edad, String provincia,
             String club, int deuda) {
         Jugador jugador = new Jugador(nombre, apellido, dni, usuario, contrasenya, edad, provincia, club, deuda, this);
+
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(club)) {
+                clubs.get(i).AddJugadorClub(jugador);
+            }
+        }
     }
 
     public void addUsuarioRegistrado(Jugador jugador) {
@@ -138,11 +144,26 @@ public class Ajedrez {
 
     }
 
+    public void cambioClubJugador(String clubAntiguo, String clubNuevo, Jugador jugador) {
+        
+         for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(clubAntiguo)) {
+                clubs.get(i).eliminarJugadorClub(jugador);
+            }
+        }
+        
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(clubNuevo)) {
+                clubs.get(i).AddJugadorClub(jugador);
+            }
+        }
+    }
+
     public void cargarDatos() {
-        Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222, "guarboix", "guarboix", 21, "", "", 0, this);
-        Jugador jugador1 = new Jugador("Maria", "Cano", 33333333, "marcano", "marcano", 21, "", "", 0, this);
-        Jugador jugador2 = new Jugador("Pepe", "Garcia", 44444444, "elpepe", "elpepe", 17, "", "", 200, this);
-        Jugador jugador3 = new Jugador("Pepa", "Gutierrez", 55555555, "lapepa", "lapepa", 21, "", "", 50, this);
+        Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222, "guarboix", "guarboix", 21, "Valencia", "ShalyClub", 0, this);
+        Jugador jugador1 = new Jugador("Maria", "Cano", 33333333, "marcano", "marcano", 21, "Alicante", "MeryClub", 0, this);
+        Jugador jugador2 = new Jugador("Pepe", "Garcia", 44444444, "elpepe", "elpepe", 17, "Castellon", "loserClub", 200, this);
+        Jugador jugador3 = new Jugador("Pepa", "Gutierrez", 55555555, "lapepa", "lapepa", 21, "Valencia", "WinnerClub", 50, this);
 
         Gerente gerente0 = new Gerente("Sharly", "Boix", 12345678, 21, 2000, 3, this);
         Gerente gerente1 = new Gerente("Amanda", "Rondas", 87654321, 33, 2210, 3, this);

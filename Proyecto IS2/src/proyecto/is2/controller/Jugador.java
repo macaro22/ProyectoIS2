@@ -69,4 +69,10 @@ public class Jugador {
     public int getDNI() {
         return dni;
     }
+    public String getClub(){
+        return club;
+    }
+    public void setClub(String nuevoClub){
+        this.club = nuevoClub;
+    }
 }

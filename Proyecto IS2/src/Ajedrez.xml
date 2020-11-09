@@ -8,8 +8,8 @@
       <contrasenya>guarboix</contrasenya>
       <edad>21</edad>
       <dni>22222222</dni>
-      <provincia></provincia>
-      <club></club>
+      <provincia>Valencia</provincia>
+      <club>ShalyClub</club>
       <deuda>0</deuda>
     </proyecto.is2.controller.Jugador>
     <proyecto.is2.controller.Jugador>
@@ -19,8 +19,8 @@
       <contrasenya>marcano</contrasenya>
       <edad>21</edad>
       <dni>33333333</dni>
-      <provincia></provincia>
-      <club></club>
+      <provincia>Alicante</provincia>
+      <club>MeryClub</club>
       <deuda>0</deuda>
     </proyecto.is2.controller.Jugador>
     <proyecto.is2.controller.Jugador>
@@ -30,8 +30,8 @@
       <contrasenya>elpepe</contrasenya>
       <edad>17</edad>
       <dni>44444444</dni>
-      <provincia></provincia>
-      <club></club>
+      <provincia>Castellon</provincia>
+      <club>loserClub</club>
       <deuda>200</deuda>
     </proyecto.is2.controller.Jugador>
     <proyecto.is2.controller.Jugador>
@@ -41,15 +41,12 @@
       <contrasenya>lapepa</contrasenya>
       <edad>21</edad>
       <dni>55555555</dni>
-      <provincia></provincia>
-      <club></club>
+      <provincia>Valencia</provincia>
+      <club>WinnerClub</club>
       <deuda>50</deuda>
     </proyecto.is2.controller.Jugador>
   </jugadoresRegistrados>
-  <morosos>
-    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
-    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[4]"/>
-  </morosos>
+  <morosos/>
   <gerentes>
     <proyecto.is2.controller.Gerente>
       <nombre>Sharly</nombre>

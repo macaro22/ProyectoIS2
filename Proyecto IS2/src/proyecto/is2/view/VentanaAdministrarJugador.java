@@ -29,6 +29,12 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         initComponents();
         textDeudaActual.setEditable(false);
         botonBaja.setEnabled(false);
+        botonCambio.setEnabled(false);
+        botonAnyadirDeuda.setEnabled(false);
+        
+        for (int i = 0; i < admin.consultarProvincias().size(); i++) {
+            comboProvincias.addItem(admin.consultarProvincias().get(i).toString());
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -36,6 +42,7 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         labelBuscar = new javax.swing.JLabel();
         textBuscar = new javax.swing.JTextField();
         botonBuscar = new javax.swing.JButton();
@@ -48,6 +55,15 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         labelAnyadirDeuda = new javax.swing.JLabel();
         labelDeudaActual = new javax.swing.JLabel();
         botonAceptar = new javax.swing.JButton();
+        botonCambio = new javax.swing.JButton();
+        labelClub = new javax.swing.JLabel();
+        labelClubNombre = new javax.swing.JLabel();
+        labelProvincia = new javax.swing.JLabel();
+        labelClubNuevo = new javax.swing.JLabel();
+        comboProvincias = new javax.swing.JComboBox<>();
+        comboClub = new javax.swing.JComboBox<>();
+
+        jLabel1.setText("jLabel1");
 
         setTitle("Administrar Jugador");
 
@@ -89,38 +105,66 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
             }
         });
 
+        botonCambio.setText("Cambio Club");
+        botonCambio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCambioActionPerformed(evt);
+            }
+        });
+
+        labelClub.setText("Club:");
+
+        labelProvincia.setText("Provincia");
+
+        labelClubNuevo.setText("Club");
+
+        comboProvincias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboProvinciasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonBaja, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelAnyadirDeuda)
+                                    .addComponent(labelDeudaActual)
+                                    .addComponent(labelProvincia)
+                                    .addComponent(labelClubNuevo))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textAnyadirDeuda, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(textDeudaActual, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(comboProvincias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboClub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(botonAnyadirDeuda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonCambio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonAceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(labelBuscar)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addComponent(botonBuscar))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelJugador)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelAnyadirDeuda)
-                                    .addComponent(labelDeudaActual))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textDeudaActual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textAnyadirDeuda, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(botonBaja))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botonAceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonAnyadirDeuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(50, 50, 50))
+                            .addComponent(labelClub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelJugador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelClubNombre)
+                            .addComponent(labelNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,26 +175,37 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonBuscar))
-                .addGap(43, 43, 43)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelJugador)
                     .addComponent(labelNombreJugador))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textAnyadirDeuda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelAnyadirDeuda)
+                    .addComponent(botonAnyadirDeuda))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelDeudaActual)
+                    .addComponent(textDeudaActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelClub)
+                    .addComponent(labelClubNombre))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboProvincias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelProvincia)
+                    .addComponent(botonCambio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonAnyadirDeuda)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textAnyadirDeuda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAnyadirDeuda))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textDeudaActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelDeudaActual))))
-                .addGap(57, 57, 57)
+                    .addComponent(comboClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelClubNuevo))
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonBaja)
                     .addComponent(botonAceptar))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,6 +220,9 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         if (jugador != null) {
             labelNombreJugador.setText(jugador.nombre());
             textDeudaActual.setText("" + jugador.getDeuda() + "€");
+            labelClubNombre.setText(jugador.getClub());
+            botonCambio.setEnabled(true);
+            botonAnyadirDeuda.setEnabled(true);
             
             if (jugador.getDeuda() > 0) {
                 botonBaja.setEnabled(false);
@@ -206,17 +264,41 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         admin.darBajaJugador(jugador);
     }//GEN-LAST:event_botonBajaActionPerformed
 
+    private void botonCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambioActionPerformed
+        // TODO add your handling code here:
+        admin.cambioClubJugador(jugador.getClub(),comboClub.getItemAt(comboClub.getSelectedIndex()), jugador);
+        jugador.setClub(comboClub.getItemAt(comboClub.getSelectedIndex()));
+        labelClubNombre.setText(jugador.getClub());
+    }//GEN-LAST:event_botonCambioActionPerformed
+
+    private void comboProvinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProvinciasActionPerformed
+        // TODO add your handling code here:
+        String provincia = comboProvincias.getSelectedItem().toString();
+        comboClub.removeAllItems();
+        for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
+            comboClub.addItem(admin.consultarClub(provincia).get(i).toString());
+        }
+    }//GEN-LAST:event_comboProvinciasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.JButton botonAnyadirDeuda;
     private javax.swing.JButton botonBaja;
     private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonCambio;
+    private javax.swing.JComboBox<String> comboClub;
+    private javax.swing.JComboBox<String> comboProvincias;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelAnyadirDeuda;
     private javax.swing.JLabel labelBuscar;
+    private javax.swing.JLabel labelClub;
+    private javax.swing.JLabel labelClubNombre;
+    private javax.swing.JLabel labelClubNuevo;
     private javax.swing.JLabel labelDeudaActual;
     private javax.swing.JLabel labelJugador;
     private javax.swing.JLabel labelNombreJugador;
+    private javax.swing.JLabel labelProvincia;
     private javax.swing.JTextField textAnyadirDeuda;
     private javax.swing.JTextField textBuscar;
     private javax.swing.JTextField textDeudaActual;

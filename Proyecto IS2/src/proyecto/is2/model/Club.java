@@ -5,7 +5,9 @@
  */
 package proyecto.is2.model;
 
+import java.util.ArrayList;
 import proyecto.is2.controller.Gerente;
+import proyecto.is2.controller.Jugador;
 
 /**
  *
@@ -17,6 +19,7 @@ public class Club {
     private String sede;
     private Gerente gerente;
     private String provincia;
+    protected ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 
     public Club(String nombre, String sede, String provincia, Gerente gerente) {
         this.nombre = nombre;
@@ -44,5 +47,17 @@ public class Club {
     @Override
     public String toString() {
         return nombre;
+    }
+
+    public void AddJugadorClub(Jugador jugador) {
+        jugadores.add(jugador);
+    }
+
+    public void eliminarJugadorClub(Jugador jugador) {
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).nombre().equals(jugador.nombre())) {
+                jugadores.remove(i);
+            }
+        }
     }
 }

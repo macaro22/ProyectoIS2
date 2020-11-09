@@ -239,7 +239,8 @@ public class VentanaModificarClub extends javax.swing.JFrame {
             areaHistorial.setText("CONTRATOS:" + "\n"
                     + "     Sus nóminas han sido: " + historialNom + "." + "\n"
                     + "     Sus IRPF han sido: " + historialIRPF + "." + "\n\n"
-                    + "CLUBS ANTERIORES:");
+                    + "CLUBS ANTERIORES:"+"\n"
+                    + "     Ha estado en: ");
         } else {
             JOptionPane.showMessageDialog(this, "No se ha encontrado el gerente", "error gerente seleccionado", JOptionPane.ERROR_MESSAGE);
         }
