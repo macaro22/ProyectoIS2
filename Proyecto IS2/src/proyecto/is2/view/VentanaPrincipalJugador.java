@@ -24,7 +24,7 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         this.ventanaAnterior = VentanaAnterior;
         this.jugador = jugador;
         initComponents();
-
+        
         if (jugador.getEdad() >= 18) {
             botonResponsable.setEnabled(false);
         };

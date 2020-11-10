@@ -33,6 +33,12 @@
       <provincia>Castellon</provincia>
       <club>loserClub</club>
       <deuda>200</deuda>
+      <responsable>
+        <nombre>qwert</nombre>
+        <dni>11</dni>
+        <telefono>11</telefono>
+        <domicilio>aaaa</domicilio>
+      </responsable>
     </proyecto.is2.controller.Jugador>
     <proyecto.is2.controller.Jugador>
       <nombre>Pepa</nombre>

@@ -86,4 +86,8 @@ public class Jugador {
         this.responsable = responsable;
         System.out.print(responsable.getNombre());
     }
+    
+    public String getResponsable(){
+        return responsable.getNombre();
+    }
 }
