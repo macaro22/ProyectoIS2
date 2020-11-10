@@ -45,7 +45,7 @@ public class Ajedrez {
 
     }
 
-    public void CrearGerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf) {
+    public void CrearGerente(String nombre,  String apellido, int dni, int edad, int nomina, int irpf) {
         Gerente geren = new Gerente(nombre, apellido, dni, edad, nomina, irpf, this);
     }
 
