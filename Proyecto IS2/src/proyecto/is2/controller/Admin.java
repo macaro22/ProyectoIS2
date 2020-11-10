@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
 import proyecto.is2.model.Provincia;
 import proyecto.is2.model.Club;
+import proyecto.is2.model.Torneo;
 
 /**
  *
@@ -45,6 +46,10 @@ public class Admin {
 
     public ArrayList<Club> consultarClub(String provincia) {
         return ajedrez.consultarClub(provincia);
+    }
+    
+    public ArrayList<Torneo> consultarTorneo(){
+        return ajedrez.consultarTorneo();
     }
 
     public ArrayList<Jugador> consultarMorosos() {
