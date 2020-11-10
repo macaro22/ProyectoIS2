@@ -33,12 +33,6 @@
       <provincia>Castellon</provincia>
       <club>loserClub</club>
       <deuda>200</deuda>
-      <responsable>
-        <nombre>qwert</nombre>
-        <dni>11</dni>
-        <telefono>11</telefono>
-        <domicilio>aaaa</domicilio>
-      </responsable>
     </proyecto.is2.controller.Jugador>
     <proyecto.is2.controller.Jugador>
       <nombre>Pepa</nombre>
@@ -120,6 +114,7 @@
       <jugadores>
         <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador"/>
       </jugadores>
+      <torneos/>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>MeryClub</nombre>
@@ -129,6 +124,7 @@
       <jugadores>
         <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[2]"/>
       </jugadores>
+      <torneos/>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>loserClub</nombre>
@@ -138,6 +134,7 @@
       <jugadores>
         <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
       </jugadores>
+      <torneos/>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
       <nombre>WinnerClub</nombre>
@@ -147,8 +144,10 @@
       <jugadores>
         <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[4]"/>
       </jugadores>
+      <torneos/>
     </proyecto.is2.model.Club>
   </clubs>
+  <torneos/>
   <provincias>
     <proyecto.is2.model.Provincia>
       <nombre>Alicante</nombre>
@@ -170,4 +169,5 @@
       </clubs>
     </proyecto.is2.model.Provincia>
   </provincias>
+  <responsables/>
 </proyecto.is2.model.Ajedrez>

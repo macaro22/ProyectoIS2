@@ -139,12 +139,12 @@ public class Ajedrez {
             }
         }
     }
-    
-    public void anyadirTorneo(String nombre, Club club,String provincia){
-        Torneo torneo = new Torneo(nombre,provincia,club,null,null,null);
+
+    public void anyadirTorneo(String nombre, Club club, String provincia) {
+        Torneo torneo = new Torneo(nombre, provincia, club, null, null, null);
         torneos.add(torneo);
-        for(int i = 0; i < clubs.size(); i++){
-            if(clubs.get(i).toString().equals(nombre)){
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(nombre)) {
                 clubs.get(i).addTorneo(torneo);
             }
         }
@@ -180,6 +180,19 @@ public class Ajedrez {
         }
     }
 
+    public void historialGerente(String club) {
+        Gerente gerente = null;
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(club)) {
+                gerente = clubs.get(i).getGerente();
+                System.out.println(gerente.nombre());
+            }
+        }
+        if (gerente != null) {
+            gerente.historialClub(club);
+        }
+    }
+
     public void cargarDatos() {
         Jugador jugador0 = new Jugador("Carlos", "Guardiola", 22222222, "guarboix", "guarboix", 21, "Valencia", "ShalyClub", 0, this);
         Jugador jugador1 = new Jugador("Maria", "Cano", 33333333, "marcano", "marcano", 21, "Alicante", "MeryClub", 0, this);
@@ -209,20 +222,20 @@ public class Ajedrez {
         clubs.add(club1);
         clubs.add(club2);
         clubs.add(club3);
-        
-        Date fechainicio0 = new Date(234,7,6);
-        Date fechafin0 = new Date(234,5,2);
-        Date fechainicio1 = new Date(123,5,7);
-        Date fechafin1 = new Date(987,5,4);    
-        Date fechainicio2 = new Date(234,8,6);
-        Date fechafin2 = new Date(234,9,2);
-        Date fechainicio3 = new Date(234,10,6);
-        Date fechafin3 = new Date(234,11,2);
-        
-        Torneo torneo0 = new Torneo("Torneo0","Valencia",club0,fechainicio0,fechafin0,"maria");
-        Torneo torneo1 = new Torneo("Torneo1","Alicante",club1,fechainicio1,fechafin1,"carlos");
-        Torneo torneo2 = new Torneo("Torneo2","Murcia",club2,fechainicio2,fechafin2,"maria");
-        Torneo torneo3 = new Torneo("Torneo3","Castellon",club3,fechainicio3,fechafin3,"carlos");
+
+        Date fechainicio0 = new Date(234, 7, 6);
+        Date fechafin0 = new Date(234, 5, 2);
+        Date fechainicio1 = new Date(123, 5, 7);
+        Date fechafin1 = new Date(987, 5, 4);
+        Date fechainicio2 = new Date(234, 8, 6);
+        Date fechafin2 = new Date(234, 9, 2);
+        Date fechainicio3 = new Date(234, 10, 6);
+        Date fechafin3 = new Date(234, 11, 2);
+
+        Torneo torneo0 = new Torneo("Torneo0", "Valencia", club0, fechainicio0, fechafin0, "maria");
+        Torneo torneo1 = new Torneo("Torneo1", "Alicante", club1, fechainicio1, fechafin1, "carlos");
+        Torneo torneo2 = new Torneo("Torneo2", "Murcia", club2, fechainicio2, fechafin2, "maria");
+        Torneo torneo3 = new Torneo("Torneo3", "Castellon", club3, fechainicio3, fechafin3, "carlos");
 
         provincia0.addClub(club1);
         provincia1.addClub(club2);

@@ -16,7 +16,7 @@ import proyecto.is2.controller.Jugador;
  * @author carlosguardiola
  */
 public class VentanaAdministrarJugador extends javax.swing.JFrame {
-    
+
     private final Admin admin;
     private Jugador jugador;
 
@@ -31,12 +31,12 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         botonBaja.setEnabled(false);
         botonCambio.setEnabled(false);
         botonAnyadirDeuda.setEnabled(false);
-        
+
         for (int i = 0; i < admin.consultarProvincias().size(); i++) {
             comboProvincias.addItem(admin.consultarProvincias().get(i).toString());
         }
     }
-    
+
     @SuppressWarnings("unchecked")
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -169,7 +169,7 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(40, 40, 40)
                 .addComponent(labelBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -205,7 +205,7 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonBaja)
                     .addComponent(botonAceptar))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -216,14 +216,14 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         int dni = 0;
         dni = parseInt(textBuscar.getText());
         jugador = admin.SeleccionarJugador(dni);
-        
+
         if (jugador != null) {
             labelNombreJugador.setText(jugador.nombre());
             textDeudaActual.setText("" + jugador.getDeuda() + "€");
             labelClubNombre.setText(jugador.getClub());
             botonCambio.setEnabled(true);
             botonAnyadirDeuda.setEnabled(true);
-            
+
             if (jugador.getDeuda() > 0) {
                 botonBaja.setEnabled(false);
             } else {
@@ -238,15 +238,15 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         // TODO add your handling code here:
         int deuda = 0;
         deuda = parseInt(textAnyadirDeuda.getText());
-        
+
         if (deuda < 0) {
             JOptionPane.showMessageDialog(this, "La deuda ha de ser positiva", "error endeudar", JOptionPane.ERROR_MESSAGE);
         } else {
             jugador.setDeuda(jugador.getDeuda() + deuda);
         }
-        
+
         textDeudaActual.setText("" + jugador.getDeuda() + "€");
-        
+
         if (jugador.getDeuda() > 0) {
             botonBaja.setEnabled(false);
         } else {
@@ -268,11 +268,11 @@ public class VentanaAdministrarJugador extends javax.swing.JFrame {
         // TODO add your handling code here:
         String clubAntiguo = jugador.getClub();
         String clubNuevo = comboClub.getItemAt(comboClub.getSelectedIndex());
-        
+
         admin.cambioClubJugador(clubAntiguo, clubNuevo, jugador);
         jugador.setClub(clubNuevo);
         labelClubNombre.setText(jugador.getClub());
-        
+
         botonCambio.setEnabled(false);
     }//GEN-LAST:event_botonCambioActionPerformed
 

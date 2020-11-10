@@ -93,14 +93,14 @@ public class VentanaClub extends javax.swing.JFrame {
 
         textSede.setForeground(new java.awt.Color(102, 102, 102));
 
-        botonModificarGerente.setText("Modificar");
+        botonModificarGerente.setText("Buscar");
         botonModificarGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonModificarGerenteActionPerformed(evt);
             }
         });
 
-        botonModificarEntrenador.setText("Modificar");
+        botonModificarEntrenador.setText("Buscar");
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {

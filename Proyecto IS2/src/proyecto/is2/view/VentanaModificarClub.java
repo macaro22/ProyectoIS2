@@ -73,7 +73,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
 
         labelBuscar.setText("Buscar por DNI:");
 
-        botonCambioGerente.setText("Cambiar Gerente");
+        botonCambioGerente.setText("Asignar Gerente");
         botonCambioGerente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCambioGerenteActionPerformed(evt);
@@ -118,7 +118,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
@@ -130,7 +130,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                                 .addComponent(textBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonBuscar)
-                                .addGap(18, 110, Short.MAX_VALUE)
+                                .addGap(18, 99, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textIRPF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,12 +153,12 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(imagenPerfil)))
-                .addGap(24, 24, 24))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(imagenPerfil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -182,7 +182,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                                 .addComponent(comboEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonGuardarContrato)))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
@@ -192,8 +192,8 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelHistorial)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1)))
-                .addGap(47, 47, 47))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,6 +202,9 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     private void botonCambioGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambioGerenteActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+
+        admin.historialGerente(club);
+
         for (int i = 0; i < admin.consultarClub(provincia).size(); i++) {
             if (admin.consultarClub(provincia).get(i).toString().equals(club)) {
                 admin.consultarClub(provincia).get(i).ModificarGerente(gerente);
@@ -214,7 +217,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
 
-        String historialNom, historialIRPF;
+        String historialNom, historialIRPF, historialClub;
         comboEncontrado.removeAllItems();
         int dni = parseInt(textBuscar.getText());
         gerente = admin.EncontrarGerente(dni);
@@ -228,6 +231,7 @@ public class VentanaModificarClub extends javax.swing.JFrame {
 
             historialNom = "";
             historialIRPF = "";
+            historialClub = "";
 
             for (int i = 0; i < gerente.historialNomina.size(); i++) {
                 historialNom = historialNom + gerente.historialNomina.get(i) + "€, ";
@@ -237,11 +241,15 @@ public class VentanaModificarClub extends javax.swing.JFrame {
                 historialIRPF = historialIRPF + gerente.historialIRPF.get(i) + "%, ";
             }
 
+            for (int i = 0; i < gerente.historialClub.size(); i++) {
+                historialClub = historialClub + gerente.historialClub.get(i) + ", ";
+            }
+
             areaHistorial.setText("CONTRATOS:" + "\n"
                     + "     Sus nóminas han sido: " + historialNom + "." + "\n"
                     + "     Sus IRPF han sido: " + historialIRPF + "." + "\n\n"
                     + "CLUBS ANTERIORES:" + "\n"
-                    + "     Ha estado en: ");
+                    + "     Ha estado en: " + historialClub);
         } else {
             JOptionPane.showMessageDialog(this, "No se ha encontrado el gerente", "error gerente seleccionado", JOptionPane.ERROR_MESSAGE);
         }

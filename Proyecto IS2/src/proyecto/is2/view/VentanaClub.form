@@ -180,7 +180,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonModificarGerente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modificar"/>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonModificarGerenteActionPerformed"/>
@@ -188,7 +188,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonModificarEntrenador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modificar"/>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botonAceptar">
