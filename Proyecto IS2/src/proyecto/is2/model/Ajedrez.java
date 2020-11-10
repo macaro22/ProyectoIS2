@@ -78,6 +78,10 @@ public class Ajedrez {
         }
         return provincias;
     }
+    
+    public ArrayList consultarTorneo(){
+        return torneos;
+    }
 
     public ArrayList consultarMorosos() {
         morosos.clear();

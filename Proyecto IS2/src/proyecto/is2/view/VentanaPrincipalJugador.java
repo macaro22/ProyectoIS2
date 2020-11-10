@@ -65,7 +65,6 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         });
 
         botonResponsable.setText("Responsable");
-        botonResponsable.setPreferredSize(new java.awt.Dimension(122, 32));
         botonResponsable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonResponsableActionPerformed(evt);
@@ -74,11 +73,9 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
 
         labelClub.setText("Club");
         labelClub.setPreferredSize(new java.awt.Dimension(30, 15));
-        labelClub.setSize(new java.awt.Dimension(30, 15));
 
         labelfederacion.setText("Federación");
         labelfederacion.setPreferredSize(new java.awt.Dimension(30, 15));
-        labelfederacion.setSize(new java.awt.Dimension(30, 15));
 
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +85,11 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         });
 
         botonApuntarTorneo.setText("Apuntar Torneo");
+        botonApuntarTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonApuntarTorneoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,11 +124,11 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
                     .addComponent(labelClub, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelfederacion, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
-                .addComponent(botonReservar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonReservar)
                 .addGap(90, 90, 90)
                 .addComponent(botonPartidos)
                 .addGap(90, 90, 90)
-                .addComponent(botonResponsable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonResponsable)
                 .addGap(90, 90, 90)
                 .addComponent(botonApuntarTorneo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
@@ -156,6 +158,11 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
         VentanaReserva reserva = new VentanaReserva(this);
         reserva.setVisible(true);
     }//GEN-LAST:event_botonReservarActionPerformed
+
+    private void botonApuntarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonApuntarTorneoActionPerformed
+        VentanaApuntarTorneo apuntarTorneo = new VentanaApuntarTorneo(this);
+        apuntarTorneo.setVisible(true);
+    }//GEN-LAST:event_botonApuntarTorneoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
