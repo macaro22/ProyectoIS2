@@ -5,7 +5,9 @@
  */
 package proyecto.is2.view;
 
+import static java.lang.Integer.parseInt;
 import javax.swing.JFrame;
+import proyecto.is2.controller.Jugador;
 
 /**
  *
@@ -13,11 +15,14 @@ import javax.swing.JFrame;
  */
 public class VentanaResponsable extends javax.swing.JFrame {
 
+    private Jugador jugador;
+
     /**
      * Creates new form VentanaResponsable
      */
-    public VentanaResponsable(JFrame VentanaAnterior) {
+    public VentanaResponsable(JFrame VentanaAnterior, Jugador jugador) {
         this.ventanaAnterior = VentanaAnterior;
+        this.jugador = jugador;
         initComponents();
     }
 
@@ -36,6 +41,8 @@ public class VentanaResponsable extends javax.swing.JFrame {
         textTelefono = new javax.swing.JTextField();
         botonAceptar = new javax.swing.JButton();
         textDomicilio = new javax.swing.JTextField();
+        labelDNI = new javax.swing.JLabel();
+        textDNI = new javax.swing.JTextField();
 
         setTitle("Responsable del menor");
 
@@ -54,6 +61,8 @@ public class VentanaResponsable extends javax.swing.JFrame {
             }
         });
 
+        labelDNI.setText("DNI");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,25 +70,29 @@ public class VentanaResponsable extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(labelDescripcion))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelTelefono)
-                            .addComponent(labelNombre)
-                            .addComponent(labelDomicilio))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(textTelefono)
-                            .addComponent(textDomicilio))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelDescripcion)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 271, Short.MAX_VALUE)
-                                .addComponent(botonAceptar)))))
-                .addGap(22, 22, 22))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelDNI)
+                                    .addComponent(labelNombre))
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(textDNI)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTelefono)
+                                    .addComponent(labelDomicilio))
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(textDomicilio)))
+                            .addComponent(botonAceptar))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,6 +104,10 @@ public class VentanaResponsable extends javax.swing.JFrame {
                     .addComponent(labelNombre)
                     .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelDNI)
+                    .addComponent(textDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTelefono)
                     .addComponent(textTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -98,15 +115,16 @@ public class VentanaResponsable extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDomicilio)
                     .addComponent(textDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(botonAceptar)
-                .addGap(18, 18, 18))
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
+        jugador.addResponsable(textNombre.getText(), parseInt(textDNI.getText()), parseInt(textTelefono.getText()), textDomicilio.getText());
         this.setVisible(false);
         ventanaAnterior.setVisible(true);
     }//GEN-LAST:event_botonAceptarActionPerformed
@@ -114,10 +132,12 @@ public class VentanaResponsable extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
+    private javax.swing.JLabel labelDNI;
     private javax.swing.JLabel labelDescripcion;
     private javax.swing.JLabel labelDomicilio;
     private javax.swing.JLabel labelNombre;
     private javax.swing.JLabel labelTelefono;
+    private javax.swing.JTextField textDNI;
     private javax.swing.JTextField textDomicilio;
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField textTelefono;

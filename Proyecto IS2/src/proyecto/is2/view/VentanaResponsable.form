@@ -26,32 +26,39 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelTelefono" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelNombre" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelDomicilio" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="textNombre" pref="150" max="32767" attributes="0"/>
-                          <Component id="textTelefono" max="32767" attributes="0"/>
-                          <Component id="textDomicilio" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="labelDescripcion" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelDescripcion" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="271" max="32767" attributes="0"/>
-                              <Component id="botonAceptar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="labelDNI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelNombre" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="textNombre" pref="150" max="32767" attributes="0"/>
+                                  <Component id="textDNI" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="labelTelefono" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDomicilio" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="textTelefono" pref="150" max="32767" attributes="0"/>
+                                  <Component id="textDomicilio" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="botonAceptar" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,6 +73,11 @@
                   <Component id="textNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelDNI" min="-2" max="-2" attributes="0"/>
+                  <Component id="textDNI" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -75,9 +87,9 @@
                   <Component id="labelDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
               <Component id="botonAceptar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -116,6 +128,13 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="textDomicilio">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDNI">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNI"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textDNI">
     </Component>
   </SubComponents>
 </Form>

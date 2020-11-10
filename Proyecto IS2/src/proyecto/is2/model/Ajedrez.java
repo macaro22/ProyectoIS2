@@ -23,6 +23,7 @@ public class Ajedrez {
     protected ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
     protected ArrayList<Club> clubs = new ArrayList<Club>();
     protected ArrayList<Provincia> provincias = new ArrayList<Provincia>();
+    protected ArrayList<Responsable> responsables = new ArrayList<Responsable>();
     private Jugador jugador;
     private Gerente gerente;
 
@@ -165,7 +166,6 @@ public class Ajedrez {
                 clubs.get(i).AddJugadorClub(jugador);
             }
         }
-
     }
 
     public void cargarDatos() {

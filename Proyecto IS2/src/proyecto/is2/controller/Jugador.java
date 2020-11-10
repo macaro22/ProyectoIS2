@@ -7,6 +7,7 @@ package proyecto.is2.controller;
 
 import java.util.ArrayList;
 import proyecto.is2.model.Ajedrez;
+import proyecto.is2.model.Responsable;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Jugador {
     private String provincia;
     private String club;
     private int deuda;
+    private Responsable responsable;
     protected Ajedrez ajedrez;
 
     public Jugador(String nombre, String apellidos, int dni, String usuario, String contrasenya, int edad, String provincia, String club, int deuda, Ajedrez ajedrez) {
@@ -35,6 +37,7 @@ public class Jugador {
         this.provincia = provincia;
         this.club = club;
         this.deuda = deuda;
+        this.responsable = responsable;
         ajedrez.addUsuarioRegistrado(this);
     }
 
@@ -69,10 +72,18 @@ public class Jugador {
     public int getDNI() {
         return dni;
     }
-    public String getClub(){
+
+    public String getClub() {
         return club;
     }
-    public void setClub(String nuevoClub){
+
+    public void setClub(String nuevoClub) {
         this.club = nuevoClub;
+    }
+
+    public void addResponsable(String nombre, int dni, int telefono, String domicilio) {
+        Responsable responsable = new Responsable(nombre, dni, telefono, domicilio);
+        this.responsable = responsable;
+        System.out.print(responsable.getNombre());
     }
 }

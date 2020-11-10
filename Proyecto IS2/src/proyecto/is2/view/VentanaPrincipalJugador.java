@@ -137,7 +137,7 @@ public class VentanaPrincipalJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResponsableActionPerformed
-        VentanaResponsable responsable = new VentanaResponsable(this);
+        VentanaResponsable responsable = new VentanaResponsable(this, jugador);
         responsable.setVisible(true);
     }//GEN-LAST:event_botonResponsableActionPerformed
 

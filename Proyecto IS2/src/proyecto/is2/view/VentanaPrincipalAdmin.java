@@ -163,8 +163,8 @@ public class VentanaPrincipalAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonResponsableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResponsableActionPerformed
-        VentanaResponsable responsable = new VentanaResponsable(this);
-        responsable.setVisible(true);
+        //VentanaResponsable responsable = new VentanaResponsable(this);
+        //responsable.setVisible(true);
     }//GEN-LAST:event_botonResponsableActionPerformed
 
     private void botonPartidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPartidosActionPerformed
