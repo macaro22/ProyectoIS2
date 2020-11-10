@@ -20,6 +20,7 @@ public class Club {
     private Gerente gerente;
     private String provincia;
     protected ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+    private ArrayList<Torneo> torneos = new ArrayList<Torneo>();
 
     public Club(String nombre, String sede, String provincia, Gerente gerente) {
         this.nombre = nombre;
@@ -47,6 +48,9 @@ public class Club {
     @Override
     public String toString() {
         return nombre;
+    }
+    public void addTorneo(Torneo torneo) {
+        this.torneos.add(torneo);
     }
 
     public void AddJugadorClub(Jugador jugador) {
