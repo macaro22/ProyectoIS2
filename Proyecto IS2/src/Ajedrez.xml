@@ -2,17 +2,6 @@
 <proyecto.is2.model.Ajedrez>
   <jugadoresRegistrados>
     <proyecto.is2.controller.Jugador>
-      <nombre>Carlos</nombre>
-      <apellidos>Guardiola</apellidos>
-      <usuario>guarboix</usuario>
-      <contrasenya>guarboix</contrasenya>
-      <edad>21</edad>
-      <dni>22222222</dni>
-      <provincia>Valencia</provincia>
-      <club>ShalyClub</club>
-      <deuda>0</deuda>
-    </proyecto.is2.controller.Jugador>
-    <proyecto.is2.controller.Jugador>
       <nombre>Maria</nombre>
       <apellidos>Cano</apellidos>
       <usuario>marcano</usuario>
@@ -46,7 +35,10 @@
       <deuda>50</deuda>
     </proyecto.is2.controller.Jugador>
   </jugadoresRegistrados>
-  <morosos/>
+  <morosos>
+    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[2]"/>
+    <proyecto.is2.controller.Jugador reference="../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
+  </morosos>
   <gerentes>
     <proyecto.is2.controller.Gerente>
       <nombre>Sharly</nombre>
@@ -111,9 +103,7 @@
       <sede>Ribarroja</sede>
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente"/>
       <provincia>Valencia</provincia>
-      <jugadores>
-        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador"/>
-      </jugadores>
+      <jugadores/>
       <torneos/>
     </proyecto.is2.model.Club>
     <proyecto.is2.model.Club>
@@ -122,7 +112,7 @@
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[2]"/>
       <provincia>Alicante</provincia>
       <jugadores>
-        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[2]"/>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador"/>
       </jugadores>
       <torneos/>
     </proyecto.is2.model.Club>
@@ -132,7 +122,7 @@
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[3]"/>
       <provincia>Castellon</provincia>
       <jugadores>
-        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[2]"/>
       </jugadores>
       <torneos/>
     </proyecto.is2.model.Club>
@@ -142,7 +132,7 @@
       <gerente reference="../../../gerentes/proyecto.is2.controller.Gerente[4]"/>
       <provincia>Valencia</provincia>
       <jugadores>
-        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[4]"/>
+        <proyecto.is2.controller.Jugador reference="../../../../jugadoresRegistrados/proyecto.is2.controller.Jugador[3]"/>
       </jugadores>
       <torneos/>
     </proyecto.is2.model.Club>

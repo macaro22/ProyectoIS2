@@ -11,7 +11,7 @@ import proyecto.is2.model.Club; //
  *
  * @author usuario
  */
-public class Entrenador {
+public class Entrenador extends Persona{
 
     private String nombre;
     private String apellidos;

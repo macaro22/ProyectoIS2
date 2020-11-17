@@ -18,14 +18,7 @@ import proyecto.is2.controller.Admin;
  */
 public class Ajedrez {
 
-    protected GestorAjedrez gestorAjedrez;
-    protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
-    protected ArrayList<Jugador> morosos = new ArrayList<Jugador>();
-    protected ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
-    protected ArrayList<Club> clubs = new ArrayList<Club>();
-    protected ArrayList<Torneo> torneos = new ArrayList<Torneo>();
-    protected ArrayList<Provincia> provincias = new ArrayList<Provincia>();
-    protected ArrayList<Responsable> responsables = new ArrayList<Responsable>();
+    
     private Jugador jugador;
     private Gerente gerente;
 

@@ -13,7 +13,7 @@ import proyecto.is2.model.Club;
  *
  * @author carlosguardiola
  */
-public class Gerente {
+public class Gerente extends Persona{
 
     private String nombre;
     private String apellido;
