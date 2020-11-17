@@ -17,12 +17,14 @@ import proyecto.is2.model.Torneo;
  */
 public class DAO {
     
-    protected GestorAjedrez gestorAjedrez;
-    protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
-    protected ArrayList<Jugador> morosos = new ArrayList<Jugador>();
-    protected ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
-    protected ArrayList<Club> clubs = new ArrayList<Club>();
-    protected ArrayList<Torneo> torneos = new ArrayList<Torneo>();
-    protected ArrayList<Provincia> provincias = new ArrayList<Provincia>();
-    protected ArrayList<Responsable> responsables = new ArrayList<Responsable>();
+    public GestorAjedrez gestorAjedrez;
+    public ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
+    public ArrayList<Jugador> morosos = new ArrayList<Jugador>();
+    public ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
+    public ArrayList<Club> clubs = new ArrayList<Club>();
+    public ArrayList<Torneo> torneos = new ArrayList<Torneo>();
+    public ArrayList<Provincia> provincias = new ArrayList<Provincia>();
+    public ArrayList<Responsable> responsables = new ArrayList<Responsable>();
+    
+    
 }
