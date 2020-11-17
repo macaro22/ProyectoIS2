@@ -17,8 +17,10 @@ public class VentanaApuntarTorneo extends javax.swing.JFrame {
     private Admin admin;
     
     public VentanaApuntarTorneo(JFrame VentanaAnterior) {
-        this.ventanaAnterior = VentanaAnterior;
+        
         initComponents();
+        
+        this.ventanaAnterior = VentanaAnterior;
         for (int i = 0; i < admin.consultarTorneo().size(); i++) {
             comboNombre.addItem(admin.consultarTorneo().get(i).toString());
         }
@@ -60,15 +62,16 @@ public class VentanaApuntarTorneo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(botonAceptar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(82, Short.MAX_VALUE)
-                .addComponent(labelNombre)
-                .addGap(36, 36, 36)
-                .addComponent(comboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelNombre)
+                        .addGap(36, 36, 36)
+                        .addComponent(comboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(botonAceptar)
+                        .addGap(160, 160, 160))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,9 +80,9 @@ public class VentanaApuntarTorneo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(botonAceptar)
-                .addGap(52, 52, 52))
+                .addGap(53, 53, 53))
         );
 
         pack();
@@ -94,10 +97,9 @@ public class VentanaApuntarTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_comboNombreActionPerformed
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
-        VentanaApuntarTorneo apuntarTorneo = new VentanaApuntarTorneo(ventanaAnterior);
+        ventanaAnterior.setVisible(true);
         this.setVisible(false);
         
-        apuntarTorneo.setVisible(true);
         
         String nombre = comboNombre.getItemAt(comboNombre.getSelectedIndex());
     }//GEN-LAST:event_botonAceptarActionPerformed
