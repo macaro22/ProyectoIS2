@@ -11,7 +11,6 @@ import proyecto.is2.controller.GestorAjedrez;
 import proyecto.is2.controller.Gerente;
 import proyecto.is2.controller.Jugador;
 import proyecto.is2.controller.Admin;
-import proyecto.is2.controller.DAO;
 
 /**
  *
@@ -19,41 +18,47 @@ import proyecto.is2.controller.DAO;
  */
 public class Ajedrez {
 
-    
+    protected GestorAjedrez gestorAjedrez;
+    protected ArrayList<Jugador> jugadoresRegistrados = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> morosos = new ArrayList<Jugador>();
+    protected ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
+    protected ArrayList<Club> clubs = new ArrayList<Club>();
+    protected ArrayList<Torneo> torneos = new ArrayList<Torneo>();
+    protected ArrayList<Provincia> provincias = new ArrayList<Provincia>();
+    protected ArrayList<Responsable> responsables = new ArrayList<Responsable>();
     private Jugador jugador;
     private Gerente gerente;
-    private DAO dao;
 
     public void CrearJugador(String nombre, String apellido, int dni, String usuario, String contrasenya, int edad, String provincia,
             String club, int deuda) {
         Jugador jugador = new Jugador(nombre, apellido, dni, usuario, contrasenya, edad, provincia, club, deuda, this);
 
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(club)) {
-                dao.clubs.get(i).AddJugadorClub(jugador);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(club)) {
+                clubs.get(i).AddJugadorClub(jugador);
             }
         }
     }
 
-    public void addUsuarioRegistrado(Jugador jugador) {
-        dao.jugadoresRegistrados.add(jugador);
+    public void addUsuarioRegistrado(Jugador jugador)  {
+        jugadoresRegistrados.add(jugador);
 
     }
 
-    public void CrearGerente(String nombre,  String apellido, int dni, int edad, int nomina, int irpf) {
+    public void CrearGerente(String nombre, String apellido, int dni, int edad, int nomina, int irpf) {
         Gerente geren = new Gerente(nombre, apellido, dni, edad, nomina, irpf, this);
     }
 
     public void addGerente(Gerente gerente) {
-        dao.gerentes.add(gerente);
+        gerentes.add(gerente);
     }
 
     public Gerente buscarGerente(int dni) {
 
         Gerente gerent = null;
-        for (int i = 0; i < dao.gerentes.size(); i++) {
-            if (dao.gerentes.get(i).getDNI() == dni) {
-                gerent = dao.gerentes.get(i);
+        for (int i = 0; i < gerentes.size(); i++) {
+            if (gerentes.get(i).getDNI() == dni) {
+                gerent = gerentes.get(i);
                 return gerent;
             }
         }
@@ -61,41 +66,41 @@ public class Ajedrez {
     }
 
     public ArrayList consultarProvincias() {
-        return dao.provincias;
+        return provincias;
     }
 
     public ArrayList consultarClub(String provincia) {
 
-        for (int i = 0; i < dao.provincias.size(); i++) {
-            if (dao.provincias.get(i).toString().equals(provincia)) {
-                return dao.provincias.get(i).consultarClub();
+        for (int i = 0; i < provincias.size(); i++) {
+            if (provincias.get(i).toString().equals(provincia)) {
+                return provincias.get(i).consultarClub();
             }
         }
-        return dao.provincias;
+        return provincias;
     }
-    
-    public ArrayList consultarTorneo(){
-        return dao.torneos;
+
+    public ArrayList consultarTorneo() {
+        return torneos;
     }
 
     public ArrayList consultarMorosos() {
-        dao.morosos.clear();
+        morosos.clear();
 
-        for (int i = 0; i < dao.jugadoresRegistrados.size(); i++) {
-            if (dao.jugadoresRegistrados.get(i).getDeuda() != 0) {
-                dao.morosos.add(dao.jugadoresRegistrados.get(i));
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getDeuda() != 0) {
+                morosos.add(jugadoresRegistrados.get(i));
             }
         }
-        return dao.morosos;
+        return morosos;
     }
 
     public Jugador ComprobarJugador(String usuario) {
 
         Jugador jugadors = null;
 
-        for (int i = 0; i < dao.jugadoresRegistrados.size(); i++) {
-            if (dao.jugadoresRegistrados.get(i).getUsuario().equals(usuario)) {
-                jugadors = dao.jugadoresRegistrados.get(i);
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getUsuario().equals(usuario)) {
+                jugadors = jugadoresRegistrados.get(i);
                 return jugadors;
             }
         }
@@ -105,9 +110,9 @@ public class Ajedrez {
     public Jugador SeleccionarJugador(int dni) {
         Jugador jugadors = null;
 
-        for (int i = 0; i < dao.jugadoresRegistrados.size(); i++) {
-            if (dao.jugadoresRegistrados.get(i).getDNI() == dni) {
-                jugadors = dao.jugadoresRegistrados.get(i);
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getDNI() == dni) {
+                jugadors = jugadoresRegistrados.get(i);
                 return jugadors;
             }
         }
@@ -116,49 +121,49 @@ public class Ajedrez {
 
     public void darBajaJugador(Jugador jugadoborrar) {
 
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(jugadoborrar.getClub())) {
-                dao.clubs.get(i).eliminarJugadorClub(jugadoborrar);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(jugadoborrar.getClub())) {
+                clubs.get(i).eliminarJugadorClub(jugadoborrar);
             }
         }
 
-        for (int i = 0; i < dao.jugadoresRegistrados.size(); i++) {
-            if (dao.jugadoresRegistrados.get(i).getDNI() == jugadoborrar.getDNI()) {
-                dao.jugadoresRegistrados.remove(i);
+        for (int i = 0; i < jugadoresRegistrados.size(); i++) {
+            if (jugadoresRegistrados.get(i).getDNI() == jugadoborrar.getDNI()) {
+                jugadoresRegistrados.remove(i);
             }
         }
     }
 
     public void anyadirClub(String provincia, String nombre) {
         Club club = new Club(nombre, null, provincia, null);
-        dao.clubs.add(club);
-        for (int i = 0; i < dao.provincias.size(); i++) {
-            if (dao.provincias.get(i).toString().equals(provincia)) {
-                dao.provincias.get(i).addClub(club);
+        clubs.add(club);
+        for (int i = 0; i < provincias.size(); i++) {
+            if (provincias.get(i).toString().equals(provincia)) {
+                provincias.get(i).addClub(club);
             }
         }
     }
 
     public void anyadirTorneo(String nombre, Club club, String provincia) {
         Torneo torneo = new Torneo(nombre, provincia, club, null, null, null);
-        dao.torneos.add(torneo);
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(nombre)) {
-                dao.clubs.get(i).addTorneo(torneo);
+        torneos.add(torneo);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(nombre)) {
+                clubs.get(i).addTorneo(torneo);
             }
         }
     }
 
     public void eliminarClub(String nombre, String provincia) {
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(nombre)) {
-                dao.clubs.remove(i);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(nombre)) {
+                clubs.remove(i);
             }
         }
 
-        for (int i = 0; i < dao.provincias.size(); i++) {
-            if (dao.provincias.get(i).toString().equals(provincia)) {
-                dao.provincias.get(i).eliminarClub(nombre);
+        for (int i = 0; i < provincias.size(); i++) {
+            if (provincias.get(i).toString().equals(provincia)) {
+                provincias.get(i).eliminarClub(nombre);
             }
         }
 
@@ -166,24 +171,24 @@ public class Ajedrez {
 
     public void cambioClubJugador(String clubAntiguo, String clubNuevo, Jugador jugador) {
 
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(clubAntiguo)) {
-                dao.clubs.get(i).eliminarJugadorClub(jugador);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(clubAntiguo)) {
+                clubs.get(i).eliminarJugadorClub(jugador);
             }
         }
 
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(clubNuevo)) {
-                dao.clubs.get(i).AddJugadorClub(jugador);
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(clubNuevo)) {
+                clubs.get(i).AddJugadorClub(jugador);
             }
         }
     }
 
     public void historialGerente(String club) {
         Gerente gerente = null;
-        for (int i = 0; i < dao.clubs.size(); i++) {
-            if (dao.clubs.get(i).toString().equals(club)) {
-                gerente = dao.clubs.get(i).getGerente();
+        for (int i = 0; i < clubs.size(); i++) {
+            if (clubs.get(i).toString().equals(club)) {
+                gerente = clubs.get(i).getGerente();
                 System.out.println(gerente.nombre());
             }
         }
@@ -209,18 +214,18 @@ public class Ajedrez {
         Provincia provincia0 = new Provincia("Alicante");
         Provincia provincia1 = new Provincia("Castellon");
         Provincia provincia2 = new Provincia("Valencia");
-        dao.provincias.add(provincia0);
-        dao.provincias.add(provincia1);
-        dao.provincias.add(provincia2);
+        provincias.add(provincia0);
+        provincias.add(provincia1);
+        provincias.add(provincia2);
 
         Club club0 = new Club("ShalyClub", "Ribarroja", "Valencia", gerente0);
         Club club1 = new Club("MeryClub", "Murcia", "Alicante", gerente1);
         Club club2 = new Club("loserClub", "CastellonSity", "Castellon", gerente2);
         Club club3 = new Club("WinnerClub", "Estació den nord", "Valencia", gerente3);
-        dao.clubs.add(club0);
-        dao.clubs.add(club1);
-        dao.clubs.add(club2);
-        dao.clubs.add(club3);
+        clubs.add(club0);
+        clubs.add(club1);
+        clubs.add(club2);
+        clubs.add(club3);
 
         Date fechainicio0 = new Date(234, 7, 6);
         Date fechafin0 = new Date(234, 5, 2);
